@@ -1,0 +1,28 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--neutral-10)",
+      "borderColor": "var(--neutral-100)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "fontWeight": "normal"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "animation": {
+        "duration": "0.2s",
+        "direction": "normal",
+        "iterationCount": "1",
+        "timingFunction": "ease",
+        "keyframes": {
+          "0%": {},
+          "100%": {
+            "borderWidth": "2px"
+          }
+        }
+      }
+    }
+  ]
+}

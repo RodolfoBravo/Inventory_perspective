@@ -1,0 +1,729 @@
+{
+  "custom": {},
+  "params": {
+    "btnActionClose": "closePopup",
+    "btnActionPrimary": "closePopup",
+    "btnActionSecondary": "closePopup",
+    "btnIconAlignment": "right",
+    "btnIconPrimary": "chevron_right",
+    "btnIconSecondary": "",
+    "btnTextPrimary": "Primary",
+    "btnTextSecondary": "Secondary",
+    "message": "Alert message goes here.",
+    "showCloseBtn": true,
+    "state": "info",
+    "title": "title"
+  },
+  "propConfig": {
+    "params.btnActionClose": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.btnActionPrimary": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.btnActionSecondary": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.btnIconAlignment": {
+      "paramDirection": "inout"
+    },
+    "params.btnIconPrimary": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.btnIconSecondary": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.btnIconSecondary_1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.btnIconSecondary_2": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.btnIconSecondary_3": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.btnTextPrimary": {
+      "paramDirection": "inout"
+    },
+    "params.btnTextSecondary": {
+      "paramDirection": "inout"
+    },
+    "params.buttons.key": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.message": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showCloseBtn": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.state": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 224,
+      "width": 384
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "iconMain"
+            },
+            "position": {
+              "basis": "32px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.color": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.state}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "var(--info)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "warning",
+                          "output": "var(--warning)"
+                        },
+                        {
+                          "input": "success",
+                          "output": "var(--success)"
+                        },
+                        {
+                          "input": "error",
+                          "output": "var(--error)"
+                        },
+                        {
+                          "input": "info",
+                          "output": "var(--info)"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.state}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "material/info",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "warning",
+                          "output": "material/warning"
+                        },
+                        {
+                          "input": "info",
+                          "output": "material/info"
+                        },
+                        {
+                          "input": "error",
+                          "output": "material/error"
+                        },
+                        {
+                          "input": "success",
+                          "output": "material/check_circle"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Utilities/m-r-16"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{this.props.text}"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": true,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "",
+                              "output": false
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.state"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "var(--info)",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "info",
+                              "output": "var(--info)"
+                            },
+                            {
+                              "input": "success",
+                              "output": "var(--success)"
+                            },
+                            {
+                              "input": "error",
+                              "output": "var(--error)"
+                            },
+                            {
+                              "input": "warning",
+                              "output": "var(--warning)"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.title"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Alerts/alertTitle"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "message"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.message"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Alerts/alertMessage"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "content"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "Utilities/m-r-16"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tmessageType \u003d self.view.params.btnActionClose\t\n\tsystem.perspective.sendMessage(messageType, scope \u003d \"session\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                },
+                "onTouchStart": {
+                  "config": {
+                    "script": "\tmessageType \u003d self.view.params.btnActionClose\t\n\tsystem.perspective.sendMessage(messageType, scope \u003d \"session\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "iconClose"
+            },
+            "position": {
+              "basis": "16px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.showCloseBtn"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "material/close",
+              "style": {
+                "classes": "Alerts/alertClose"
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "closePopup",
+                  "pageScope": false,
+                  "script": "\t# closes the last focused popup\n\tsystem.perspective.closePopup(\u0027\u0027)",
+                  "sessionScope": true,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "body"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "style": {
+            "classes": "Utilities/p-16"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tmessageType \u003d self.view.params.btnActionSecondary\t\n\tsystem.perspective.sendMessage(messageType, scope \u003d \"session\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "actionSecondary"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": true,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "",
+                          "output": false
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.image.icon.path": {
+                "binding": {
+                  "config": {
+                    "expression": "\"material/\" + {view.params.btnIconSecondary}"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif str(value) \u003d\u003d \"material/\":\n\t\treturn \"\"\n\telse:\n\t\treturn value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.image.position": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.btnIconAlignment"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.image.style.fill": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.state"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "#222222",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "info",
+                          "output": "#17599C"
+                        },
+                        {
+                          "input": "success",
+                          "output": "#117539"
+                        },
+                        {
+                          "input": "warning",
+                          "output": "#C26700"
+                        },
+                        {
+                          "input": "error",
+                          "output": "#A62D19"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.state"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "Alerts/alertBtn2 Utilities/m-r-8 Utilities/p-rl-8",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "error",
+                          "output": "Alerts/states/errorBtn2 Utilities/m-r-8 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "warning",
+                          "output": "Alerts/states/warningBtn2 Utilities/m-r-8 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "info",
+                          "output": "Alerts/states/infoBtn2 Utilities/m-r-8 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "success",
+                          "output": "Alerts/states/successBtn2 Utilities/m-r-8 Utilities/p-rl-8"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.btnTextSecondary}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "height": 20,
+                "icon": {},
+                "width": 20
+              },
+              "primary": false,
+              "style": {}
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "closePopup",
+                  "pageScope": false,
+                  "script": "\t# closes the last focused popup\n\tsystem.perspective.closePopup(\u0027\u0027)",
+                  "sessionScope": true,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tmessageType \u003d self.view.params.btnActionPrimary\t\n\tsystem.perspective.sendMessage(messageType, scope \u003d \"session\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "actionPrimary"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.image.icon.path": {
+                "binding": {
+                  "config": {
+                    "expression": "\"material/\" + {view.params.btnIconPrimary}"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif str(value) \u003d\u003d \"material/\":\n\t\treturn \"\"\n\telse:\n\t\treturn value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.image.position": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.btnIconAlignment"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.state"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "Alerts/alertBtn1 Utilities/p-rl-8",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "error",
+                          "output": "Alerts/states/errorBtn1 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "warning",
+                          "output": "Alerts/states/warningBtn1 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "info",
+                          "output": "Alerts/states/infoBtn1 Utilities/p-rl-8"
+                        },
+                        {
+                          "input": "success",
+                          "output": "Alerts/states/successBtn1 Utilities/p-rl-8"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.btnTextPrimary"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "height": 20,
+                "icon": {},
+                "width": 20
+              },
+              "style": {}
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "closePopup",
+                  "pageScope": false,
+                  "script": "\t# closes the last focused popup\n\tsystem.perspective.closePopup(\u0027\u0027)",
+                  "sessionScope": true,
+                  "viewScope": false
+                },
+                {
+                  "messageType": "logout",
+                  "pageScope": false,
+                  "script": "\tsystem.perspective.logout()",
+                  "sessionScope": true,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "footer"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "backgroundColor": "var(--neutral-30)",
+            "borderTop": "1px solid var(--neutral-50)",
+            "classes": "Utilities/p-8"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onFocus": {
+          "config": {
+            "script": "\tmessageType \u003d \u0027alertFocus\u0027\n\tsystem.perspective.sendMessage(alertFocus)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "dialog"
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "expression": "{view.params.state}"
+          },
+          "transforms": [
+            {
+              "fallback": "Alerts/alertDefault",
+              "inputType": "scalar",
+              "mappings": [
+                {
+                  "input": "info",
+                  "output": "Alerts/states/info"
+                },
+                {
+                  "input": "warning",
+                  "output": "Alerts/states/warning"
+                },
+                {
+                  "input": "error",
+                  "output": "Alerts/states/error"
+                },
+                {
+                  "input": "success",
+                  "output": "Alerts/states/success"
+                }
+              ],
+              "outputType": "scalar",
+              "type": "map"
+            }
+          ],
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "maxHeight": "none"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

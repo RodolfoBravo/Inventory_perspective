@@ -1,0 +1,479 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "48px"
+        },
+        "props": {
+          "style": {
+            "fontSize": "24px",
+            "textAlign": "center"
+          },
+          "text": "Swap Theme"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.props.theme"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "options": [
+            {
+              "label": "Light",
+              "value": "light"
+            },
+            {
+              "label": "Light (cool tint)",
+              "value": "light-cool"
+            },
+            {
+              "label": "Light (warm tint)",
+              "value": "light-warm"
+            },
+            {
+              "label": "Dark",
+              "value": "dark"
+            },
+            {
+              "label": "Dark (cool tint)",
+              "value": "dark-cool"
+            },
+            {
+              "label": "Dark (warm tint)",
+              "value": "dark-warm"
+            }
+          ],
+          "placeholder": {
+            "text": ""
+          },
+          "search": {
+            "enabled": false
+          },
+          "style": {
+            "classes": "Utilities/m-b-16"
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "fontSize": "24px",
+            "textAlign": "center"
+          },
+          "text": "Example Scripts"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# ~~ 12 PARAMETERS ~~\n\t# state\t\t\t\t\t(default \u003d info) empty string uses generic gray styling\n\t# title \t\t\t\t(default \u003d Alert Title) empty string sets the title visibility to false\n\t# message \t\t\t\t(default \u003d Alert message goes here.)\n\t# show close button\t\t(default \u003d true) boolean\n\t# btn text primary\t\t(default \u003d \"Primary\")\n\t# btn text secondary\t(default \u003d \"Secondary\")\n\t# btn icon primary \t\t(default \u003d chevron_right) do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon secondary \t(default \u003d \"\") do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon alignment\t(default \u003d \"right\") left or right\n\t# btn primary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn secondary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn close action\t\t(default \u003d \"\") add message handlers on this icon to enable other script actions\n\n\tAlerts.showAlert(\"warning\", \"This is a Warning!\", \"You have been warned.\", \"false\", \"Accept\", \"Cancel\", \"\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "warning script"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/warningBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Warning"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# ~~ 12 PARAMETERS ~~\n\t# state\t\t\t\t\t(default \u003d info) empty string uses generic gray styling\n\t# title \t\t\t\t(default \u003d Alert Title) empty string sets the title visibility to false\n\t# message \t\t\t\t(default \u003d Alert message goes here.)\n\t# show close button\t\t(default \u003d true) boolean\n\t# btn text primary\t\t(default \u003d \"Primary\")\n\t# btn text secondary\t(default \u003d \"Secondary\")\n\t# btn icon primary \t\t(default \u003d chevron_right) do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon secondary \t(default \u003d \"\") do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon alignment\t(default \u003d \"right\") left or right\n\t# btn primary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn secondary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn close action\t\t(default \u003d \"\") add message handlers on this icon to enable other script actions\n\n\tAlerts.showAlert(\"success\", \"You\u0027re So Successful\", \"Fantastic work. Really, just a job well done.\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "success script"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/successBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Success"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# ~~ 12 PARAMETERS ~~\n\t# state\t\t\t\t\t(default \u003d info) empty string uses generic gray styling\n\t# title \t\t\t\t(default \u003d Alert Title) empty string sets the title visibility to false\n\t# message \t\t\t\t(default \u003d Alert message goes here.)\n\t# show close button\t\t(default \u003d true) boolean\n\t# btn text primary\t\t(default \u003d \"Primary\")\n\t# btn text secondary\t(default \u003d \"Secondary\")\n\t# btn icon primary \t\t(default \u003d chevron_right) do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon secondary \t(default \u003d \"\") do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon alignment\t(default \u003d \"right\") left or right\n\t# btn primary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn secondary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn close action\t\t(default \u003d \"\") add message handlers on this icon to enable other script actions\n\n\tAlerts.showAlert(\"error\", \"I\u0027m Sorry, Dave.\", \"I\u0027m afraid I can\u0027t do that. I think you know what the problem is just as well as I do.\", \"true\", \"Disconnect Hal\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "error script"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/errorBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Error"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# ~~ 12 PARAMETERS ~~\n\t# state\t\t\t\t\t(default \u003d info) empty string uses generic gray styling\n\t# title \t\t\t\t(default \u003d Alert Title) empty string sets the title visibility to false\n\t# message \t\t\t\t(default \u003d Alert message goes here.)\n\t# show close button\t\t(default \u003d true) boolean\n\t# btn text primary\t\t(default \u003d \"Primary\")\n\t# btn text secondary\t(default \u003d \"Secondary\")\n\t# btn icon primary \t\t(default \u003d chevron_right) do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon secondary \t(default \u003d \"\") do not include \u0027material/\u0027 in the path, just the icon name\n\t# btn icon alignment\t(default \u003d \"right\") left or right\n\t# btn primary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn secondary action\t(default \u003d \"\") add message handlers on this button to enable other script actions\n\t# btn close action\t\t(default \u003d \"\") add message handlers on this icon to enable other script actions\n\n\tAlerts.showAlert(\"info\", \"Info Title\", \"Alert message goes here.\", \"true\", \"Continue\", \"Cancel\", \"\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "info script"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/infoBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Info"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "scripts"
+        },
+        "position": {
+          "basis": "56px"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "classes": "Utilities/m-b-16"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "48px"
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "fontSize": "24px",
+            "textAlign": "center"
+          },
+          "text": "Example Actions"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": false,
+                    "id": "alertWarning",
+                    "modal": true,
+                    "overlayDismiss": true,
+                    "resizable": false,
+                    "showCloseIcon": false,
+                    "type": "open",
+                    "viewParams": {
+                      "btnActionClose": "closePopup",
+                      "btnActionPrimary": "closePopup",
+                      "btnActionSecondary": "closePopup",
+                      "btnIconPrimary": "",
+                      "btnTextPrimary": "Accept",
+                      "btnTextSecondary": "Cancel",
+                      "message": "You have been warned.",
+                      "showCloseBtn": "false",
+                      "state": "warning",
+                      "title": "This is a Warning!"
+                    },
+                    "viewPath": "Alerts/alert"
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "warning action"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/warningBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Warning"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": false,
+                    "id": "alertSuccess",
+                    "modal": true,
+                    "overlayDismiss": true,
+                    "resizable": false,
+                    "showCloseIcon": false,
+                    "type": "open",
+                    "viewParams": {
+                      "btnActionClose": "closePopup",
+                      "btnActionPrimary": "closePopup",
+                      "btnActionSecondary": "closePopup",
+                      "btnIconPrimary": "tag_faces",
+                      "btnIconSecondary": "close",
+                      "btnTextPrimary": "I Know",
+                      "btnTextSecondary": "No",
+                      "message": "Fantastic work. Really, just a job well done.",
+                      "state": "success",
+                      "title": "You\u0027re So Successful"
+                    },
+                    "viewPath": "Alerts/alert"
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "success action"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/successBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Success"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": false,
+                    "id": "alertError",
+                    "modal": true,
+                    "overlayDismiss": true,
+                    "resizable": false,
+                    "showCloseIcon": false,
+                    "type": "open",
+                    "viewParams": {
+                      "btnActionClose": "closePopup",
+                      "btnActionPrimary": "closePopup",
+                      "btnActionSecondary": "closePopup",
+                      "btnIconPrimary": "disc_full",
+                      "btnTextPrimary": "Disconnect Hal",
+                      "btnTextSecondary": "",
+                      "message": "I\u0027m afraid I can\u0027t do that. I think you know what the problem is just as well as I do.  ",
+                      "state": "error",
+                      "title": "I\u0027m Sorry, Dave."
+                    },
+                    "viewPath": "Alerts/alert"
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "error action"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/errorBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Error"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": false,
+                    "id": "alertInfo",
+                    "modal": true,
+                    "overlayDismiss": true,
+                    "resizable": false,
+                    "showCloseIcon": false,
+                    "type": "open",
+                    "viewParams": {
+                      "btnActionClose": "closePopup",
+                      "btnActionPrimary": "closePopup",
+                      "btnActionSecondary": "closePopup",
+                      "btnIconPrimary": "",
+                      "btnTextPrimary": "Continue",
+                      "btnTextSecondary": "Cancel",
+                      "state": "info",
+                      "title": "Info Title"
+                    },
+                    "viewPath": "Alerts/alert"
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "info action"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Alerts/states/infoBtn1 Utilities/m-r-8 Utilities/p-8"
+              },
+              "text": "Info"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "actions"
+        },
+        "position": {
+          "basis": "56px"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "classes": "Utilities/m-b-16"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "info"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "props": {
+          "source": "Thank you for downloading this Ignition resource!\n\n## How to Use\nAlert popups may be called via a script or event action. The specified parameters drive their appearance and features.\n\n### Button Actions\nThe action performed when interacting with an alert button is determined by [component message handlers](https://docs.inductiveautomation.com/display/DOC80/Component+Message+Handlers). In this way, they are dynamic and extensible based on the parameters driving the alert. Add a message handler to the corresponding button to enable a new action onActionPerformed.",
+          "style": {
+            "backgroundColor": "var(--neutral-30)",
+            "borderRadius": "4px",
+            "fontSize": "0.875rem",
+            "marginTop": "1rem",
+            "padding": "1rem",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.markdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column",
+      "style": {
+        "margin": "0 auto",
+        "maxWidth": "600px",
+        "padding": "1rem"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

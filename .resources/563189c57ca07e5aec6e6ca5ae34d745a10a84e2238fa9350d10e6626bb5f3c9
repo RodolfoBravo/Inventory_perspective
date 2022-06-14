@@ -1,0 +1,67 @@
+{
+  "pages": {
+    "/settings": {
+      "viewPath": "Page/Alarms"
+    },
+    "/location": {
+      "viewPath": "Page/location",
+      "title": ""
+    },
+    "/quality": {
+      "viewPath": "Page/quality"
+    },
+    "/out": {
+      "viewPath": "Page/output_items"
+    },
+    "/pick_list": {
+      "viewPath": "Page/pick list"
+    },
+    "/Data input": {
+      "viewPath": "Page/Data Input"
+    },
+    "/work": {
+      "viewPath": "Page/work_order"
+    },
+    "/": {
+      "viewPath": "Page/Inventory"
+    }
+  },
+  "sharedDocks": {
+    "left": [
+      {
+        "viewPath": "Docks/Menu Vertical",
+        "id": "menu",
+        "viewParams": {},
+        "size": 210,
+        "resizable": false,
+        "iconUrl": "",
+        "modal": false,
+        "show": "onDemand",
+        "anchor": "fixed",
+        "content": "cover",
+        "autoBreakpoint": 480,
+        "handle": "hide"
+      }
+    ],
+    "top": [
+      {
+        "viewPath": "Framework/Breakpoint",
+        "id": "",
+        "viewParams": {
+          "path": "Header/Header",
+          "breakpointLarge": "820",
+          "breakpointMedium": "710"
+        },
+        "size": 58,
+        "resizable": false,
+        "iconUrl": "",
+        "modal": false,
+        "show": "visible",
+        "anchor": "fixed",
+        "content": "push",
+        "autoBreakpoint": 480,
+        "handle": "hide"
+      }
+    ]
+  }
+}

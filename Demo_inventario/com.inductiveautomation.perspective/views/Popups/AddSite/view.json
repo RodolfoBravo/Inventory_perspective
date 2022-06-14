@@ -1,0 +1,165 @@
+{
+  "custom": {
+    "data": null
+  },
+  "params": {
+    "id_site": 1
+  },
+  "propConfig": {
+    "custom.data": {
+      "binding": {
+        "config": {
+          "path": "view.params.id_site"
+        },
+        "transforms": [
+          {
+            "code": "\tquery \u003d \u0027select * from c_sites where id_site \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[value])\n\tif len(data)!\u003d0:\n\t\tname \u003d data[0][\u0027site_name\u0027]\n\t\tdescription \u003d data[0][\u0027description\u0027]\n\t\tif description\u003d\u003dNone:\n\t\t\tdescription\u003d\u0027\u0027\n\t\tself.getChild(\"root\").getChild(\"Button_Delete\").position.display \u003d True\n\telse:\n\t\tname \u003d \u0027\u0027\n\t\tdescription \u003d \u0027\u0027\n\t\tcolor \u003d \u0027\u0027\n\t\ticon \u003d \u0027\u0027\n\t\tself.getChild(\"root\").getChild(\"Button_Delete\").position.display \u003d False\n\tself.getChild(\"root\").getChild(\"TextField_Name\").props.text \u003d name\n\tself.getChild(\"root\").getChild(\"TextArea_Description\").props.text \u003d description\n\t\n\t\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.id_site": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 348,
+      "width": 255
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Name"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "custom": {
+          "data": null
+        },
+        "meta": {
+          "name": "TextField_Name"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Tlaxcala4"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Description"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextArea_Description"
+        },
+        "position": {
+          "basis": "86px"
+        },
+        "props": {
+          "text": "siteDescript"
+        },
+        "type": "ia.input.text-area"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tid_site \u003d self.view.params.id_site\n\tquery \u003d \u0027select * from c_sites where id_site \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[id_site])\n\t\n\tname \u003d self.getSibling(\"TextField_Name\").props.text\n\tdescription \u003d self.getSibling(\"TextArea_Description\").props.text\n\tparams \u003d [name,description]\n\tif len(data)!\u003d0:\n\t\tquery \u003d \u0027update c_sites set site_name \u003d ?,description\u003d? where id_site \u003d ?\u0027\n\t\tparams.append(id_site)\n\telse:\n\t\tquery \u003d \u0027INSERT INTO c_sites (site_name,description) VALUES (?,?)\u0027\n\tsystem.db.runPrepUpdate(query,params)\n\tsystem.perspective.sendMessage(\u0027Refresh\u0027)\n\tsystem.perspective.closePopup(\u0027AddSite\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_Save"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "text": "Save"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tid_site \u003d self.view.params.id_site\n\tquery \u003d \u0027select * from c_sites where id_site \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[id_site])\n\tif len(data)!\u003d0:\n\t\tquery \u003d \u0027delete from c_sites where id_site \u003d ?\u0027\n\t\tsystem.db.runPrepUpdate(query,[id_site])\n\tsystem.perspective.closePopup(\u0027AddSite\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_Delete"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "primary": false,
+          "text": "Delete"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "margin": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

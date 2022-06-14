@@ -1,0 +1,209 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 48,
+      "width": 340
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "HorizontalMenu"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.items[0].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[0].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[1].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[1].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[2].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[2].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[3].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[3].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[4].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[4].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[5].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[5].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "itemStyle": {
+            "classes": "Menu/Item_Horizontal"
+          },
+          "items": [
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/home"
+              },
+              "items": [],
+              "label": "Inventory",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": ""
+              },
+              "target": "/"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/work"
+              },
+              "items": [],
+              "label": "Work Orders",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": ""
+              },
+              "target": "/work"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/fact_check"
+              },
+              "items": [],
+              "label": "Quality",
+              "style": {
+                "borderRightStyle": "solid",
+                "borderRightWidth": 1,
+                "classes": ""
+              },
+              "target": "/quality"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/room"
+              },
+              "items": [],
+              "label": "Location",
+              "style": {
+                "borderRightStyle": "solid",
+                "borderRightWidth": 1,
+                "classes": ""
+              },
+              "target": "/location"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/pending_actions"
+              },
+              "items": [],
+              "label": "Pick list",
+              "style": {
+                "borderRightStyle": "solid",
+                "borderRightWidth": 1,
+                "classes": ""
+              },
+              "target": "/pick_list"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": "material/description"
+              },
+              "items": [],
+              "label": "Load Data",
+              "style": {
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": ""
+              },
+              "target": "/Data input"
+            }
+          ],
+          "style": {
+            "classes": "Menu/Menu_Horizontal"
+          }
+        },
+        "type": "ia.navigation.horizontalmenu"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

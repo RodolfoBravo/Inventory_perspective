@@ -1,0 +1,167 @@
+{
+  "custom": {},
+  "params": {
+    "backgroundColor": "#D5D5D5",
+    "endDate": "value",
+    "eventID": "value",
+    "foregroundColor": "#555555",
+    "itemID": "value",
+    "label": "value",
+    "leadColor": "#555555",
+    "leadTime": "value",
+    "percentDone": 25,
+    "startDate": "value"
+  },
+  "propConfig": {
+    "params.backgroundColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.endDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.eventID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.foregroundColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.itemID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.leadColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.leadTime": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.percentDone": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 55,
+      "width": 125
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblItemName"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.label"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentRow/ScheduledEvent/Label"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.percentDone"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "bar": {
+                "style": {
+                  "color": "#D5D5D5"
+                }
+              },
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentRow/ScheduledEvent/ProgressBar"
+              }
+            },
+            "type": "ia.display.progress"
+          }
+        ],
+        "meta": {
+          "name": "eventData"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "propConfig": {
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "view.params.backgroundColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.foregroundColor"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "EquipmentSchedule/EquipmentRow/ScheduledEvent/EventData",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "EquipmentSchedule/EquipmentRow/ScheduledEvent/Container",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

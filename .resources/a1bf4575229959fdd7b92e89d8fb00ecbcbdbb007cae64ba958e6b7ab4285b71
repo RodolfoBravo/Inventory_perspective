@@ -1,0 +1,298 @@
+{
+  "custom": {
+    "dateRange": {}
+  },
+  "params": {
+    "endDate": {
+      "$": [
+        "ts",
+        0,
+        1618849303687
+      ],
+      "$ts": 1618210260000
+    },
+    "startDate": {
+      "$": [
+        "ts",
+        0,
+        1618849320122
+      ],
+      "$ts": 1617986040000
+    }
+  },
+  "propConfig": {
+    "custom.dateRange": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif system.date.isBefore(self.custom.dateRange.startDate, self.custom.dateRange.endDate):\n\t\timport copy\n#\t\tsystem.perspective.print(\"date range change\")\n\n\t\tsDate \u003d self.custom.dateRange.startDate\n\t\teDate \u003d self.custom.dateRange.endDate\n#\t\tsystem.perspective.print(\"sDate: %s\" % (sDate))\n#\t\tsystem.perspective.print(\"eDate: %s\" % (eDate))\n\t\tcanvasInstances \u003d []\n\t\trelativeLeftPercent \u003d 0\n\t\trelativeTop \u003d 0\n\t\tcanvasStructure \u003d {\n\t\t  \"position\": \"relative\",\n\t\t  \"top\": \"0px\",\n\t\t  \"left\": \"0px\",\n\t\t  \"bottom\": \"auto\",\n\t\t  \"right\": \"auto\",\n\t\t  \"zIndex\": \"auto\",\n\t\t  \"width\": \"100%\",\n\t\t  \"height\": \"80px\",\n\t\t  \"viewPath\": \"equipment-schedule/schedule/schedule-components/time-scale\",\n\t\t  \"viewParams\": {\n\t\t\t\"endDate\": eDate,\n\t\t\t\"startDate\": sDate\n\t\t  },\n\t\t  \"style\": {\n\t\t\t\"classes\": \"\"\n\t\t  }\n\t\t}\n\n\t\t#Determine hours \u0026 minutes between overall start \u0026 end date, \u0026 total days/view instances.\n\t\thoursBetween \u003d system.date.hoursBetween(sDate, eDate)\n#\t\tsystem.perspective.print(\"hoursBetween: %s\" % (hoursBetween))\n\n\t\ttotalMinutes \u003d system.date.minutesBetween(sDate, eDate)\n#\t\tsystem.perspective.print(\"totalMinutes: %s\" % (totalMinutes))\n\t\t\n\t\tsDateDayOfYear \u003d system.date.getDayOfYear(sDate)\n\t\teDateDayOfYear \u003d system.date.getDayOfYear(eDate)\n#\t\tsystem.perspective.print(\"sDateDayOfYear %s\" % (sDateDayOfYear)) \n#\t\tsystem.perspective.print(\"eDateDayOfYear %s\" % (eDateDayOfYear)) \n\n\t\tdays \u003d eDateDayOfYear - sDateDayOfYear\n#\t\tsystem.perspective.print(\"Unadjusted Days: %s\" % (days))\n\n\t\tdays +\u003d 1\n#\t\tsystem.perspective.print(\"Total Days: %s\" % (days))\n#\t\tsystem.perspective.print(\"------------------------------\")\n\t\t\n\t\t#Build View Canvas instance JSON structure for each day. \n\t\t#This loop calculates the start \u0026 end time for each day/instance, as well it\u0027s relative positioning and view width.\n\t\tfor i in range(days):\n\t\t\tthisCanvasStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\n\t\t\t#If there is only a single day to display.\n\t\t\tif days \u003c\u003d 1:\n\t\t\t\tthisStartDate \u003d sDate\n\t\t\t\tthisEndDate \u003d eDate\n#\t\t\t\tcanvasInstances.append(thisCanvasStructure)\n\t\t\t\t\n\t\t\t#If there are multiple days.\n\t\t\telse:\n\t\t\t\t#First day.\n\t\t\t\tif i \u003d\u003d 0:\n\t\t\t\t\tthisStartDate \u003d sDate\n\t\t\t\t\tthisEndDate \u003d system.date.setTime(system.date.addDays(sDate, 1) , 0, 0, 0)\n\n\t\t\t\t\t#Calculate view instance width.\n\t\t\t\t\tfirstDayMinutesBetween \u003d system.date.minutesBetween(thisStartDate, thisEndDate) * 1.0\n\t\t\t\t\tviewWidthPercent \u003d (firstDayMinutesBetween/totalMinutes) * 100\n\t\t\t\t\t\n\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"firstDayMinutesBetween: %s\" % (firstDayMinutesBetween))\n#\t\t\t\t\tsystem.perspective.print(\"First viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"First relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n\t\t\t\t\t\n\t\t\t\t#Mid \u0026 whole days.\n\t\t\t\telif days \u003e\u003d 3 and i not in (0, days-1):\n\t\t\t\t\tthisStartDate \u003d thisEndDate\n\t\t\t\t\tthisEndDate \u003d system.date.addDays(thisEndDate, 1)\n\t\t\t\t\tthisCanvasStructure[\"top\"] \u003d relativeTop\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance width.\n#\t\t\t\t\tviewWidthPercent \u003d 24.0/hoursBetween * 100\n\t\t\t\t\tviewWidthPercent \u003d 1440.0/totalMinutes * 100\n\t\t\t\t\t\n\t\t\t\t\tthisCanvasStructure[\"left\"] \u003d (\"%s\" % relativeLeftPercent) + \"%\"\n\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole Day\")\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n\t\t\t\t\t\n\t\t\t\t#Last day.\n\t\t\t\tif i \u003d\u003d days - 1:\n\t\t\t\t\tthisStartDate \u003d thisEndDate\n#\t\t\t\t\tsystem.perspective.print(\"thisStartDate: %s\" % (thisStartDate))\n\n\t\t\t\t\tthisEndDate \u003d eDate\n#\t\t\t\t\tsystem.perspective.print(\"thisEndDate: %s\" % (thisEndDate))\n\n\t\t\t\t\t#Calcluate view instance width.\n\t\t\t\t\tlastDayMinutesBetween \u003d system.date.minutesBetween(thisStartDate, thisEndDate) * 1.0\n\t\t\t\t\tviewWidthPercent \u003d lastDayMinutesBetween/totalMinutes * 100\t\t\t\t\t\n\t\t\t\t\tthisCanvasStructure[\"top\"] \u003d relativeTop\n\t\t\t\t\tthisCanvasStructure[\"left\"] \u003d (\"%s\" % (relativeLeftPercent)) + \"%\"\n\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"lastDayMinutesBetween: %s\" % (lastDayMinutesBetween))\n#\t\t\t\t\tsystem.perspective.print(\"Last viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"Last relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n\n\t\t\t\t#Since relative position is used for the view instances, increment the left and top properties for each day/instance.\n\t\t\t\trelativeLeftPercent +\u003d viewWidthPercent\n\t\t\t\trelativeTop -\u003d 80\n\t\t\t\n\t\t\t#Set this view instance\u0027s start \u0026 end date.\n\t\t\tthisCanvasStructure[\"viewParams\"][\"startDate\"] \u003d thisStartDate\n\t\t\tthisCanvasStructure[\"viewParams\"][\"endDate\"] \u003d thisEndDate\n\t\t\t\n\t\t\t#Append view instance to the canvasInstances list.\n\t\t\tcanvasInstances.append(thisCanvasStructure)\n\t\t\n\t\t#Set the View Canvas instances property.\n\t\tself.getChild(\"root\").getChild(\"ViewCanvas\").props.instances \u003d canvasInstances"
+      },
+      "persistent": true
+    },
+    "custom.dateRange.endDate": {
+      "binding": {
+        "config": {
+          "path": "view.params.endDate"
+        },
+        "type": "property"
+      }
+    },
+    "custom.dateRange.startDate": {
+      "binding": {
+        "config": {
+          "path": "view.params.startDate"
+        },
+        "type": "property"
+      }
+    },
+    "params.endDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 81,
+      "width": 1098
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblStartDate"
+            },
+            "position": {
+              "basis": "62px"
+            },
+            "props": {
+              "text": "START"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "startDate"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Apr 7, 2021 12:00 AM",
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1618163092451
+                ],
+                "$ts": 1617778800000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          },
+          {
+            "meta": {
+              "name": "lblEnd"
+            },
+            "position": {
+              "basis": "62px"
+            },
+            "props": {
+              "text": "END"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "endDate"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Apr 9, 2021 4:00 AM",
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1618163923549
+                ],
+                "$ts": 1617966000000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          }
+        ],
+        "custom": {
+          "dateRange": {}
+        },
+        "meta": {
+          "name": "dateRange"
+        },
+        "position": {
+          "basis": "46px",
+          "display": false
+        },
+        "propConfig": {
+          "custom.dateRange": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tpass\n\t#\tif system.date.isBefore(self.custom.dateRange.startDate, self.custom.dateRange.endDate):\n#\t\timport copy\n#\t\tsystem.perspective.print(\"date range change\")\n#\t\tsDate \u003d self.custom.dateRange.startDate\n#\t\teDate \u003d self.custom.dateRange.endDate\n#\t\tcanvasInstances \u003d []\n#\t\trelativeLeftPercent \u003d 0\n#\t\trelativeTop \u003d 0\n#\t\tcanvasStructure \u003d {\n#\t\t  \"position\": \"relative\",\n#\t\t  \"top\": \"0px\",\n#\t\t  \"left\": \"0px\",\n#\t\t  \"bottom\": \"auto\",\n#\t\t  \"right\": \"auto\",\n#\t\t  \"zIndex\": \"auto\",\n#\t\t  \"width\": \"100%\",\n#\t\t  \"height\": \"110px\",\n#\t\t  \"viewPath\": \"equipment-schedule/schedule/schedule-components/time-scale\",\n#\t\t  \"viewParams\": {\n#\t\t    \"endDate\": eDate,\n#\t\t    \"startDate\": sDate\n#\t\t  },\n#\t\t  \"style\": {\n#\t\t    \"classes\": \"\"\n#\t\t  }\n#\t\t}\n#\n#\t\t#Determine hours \u0026 minutes between overall start \u0026 end date, \u0026 total days/view instances.\n#\t\thoursBetween \u003d system.date.hoursBetween(sDate, eDate)\n#\t\tminutesBetween \u003d system.date.minutesBetween(sDate, eDate)\n#\t\tsystem.perspective.print(\"hoursBetween: %s\" % (hoursBetween))\n#\t\tdays \u003d hoursBetween/24\n#\t\t\n#\t\t#Handle extra day based on remainder of hours.\n#\t\tif hoursBetween % 24 \u003e 0:\n#\t\t\tdays +\u003d1\n#\t\t\n#\t\t#Handle 24 hours or less spanning two separate days.\n#\t\tif hoursBetween \u003c\u003d 24:\n#\t\t\tif system.date.getDayOfMonth(sDate) !\u003d system.date.getDayOfMonth(eDate):\n#\t\t\t\tdays +\u003d 1\n#\t\t\t\n#\t\tsystem.perspective.print(\"Total Days: %s\" % (days))\n#\t\tsystem.perspective.print(\"------------------------------\")\n#\t\t\n#\t\t#Build View Canvas instance JSON structure for each day. \n#\t\t#This loop calculates the start \u0026 end time for each day/instance, as well it\u0027s relative positioning and view width.\n#\t\tfor i in range(days):\n#\t\t\tthisCanvasStructure \u003d copy.deepcopy(canvasStructure)\n#\t\t\t\n#\t\t\t#If there is only a single day to display.\n#\t\t\tif days \u003c\u003d 1:\n#\t\t\t\tthisStartDate \u003d sDate\n#\t\t\t\tthisEndDate \u003d eDate\n##\t\t\t\tcanvasInstances.append(thisCanvasStructure)\n#\t\t\t\t\n#\t\t\t#If there are multiple days.\n#\t\t\telse:\n#\t\t\t\t#First day.\n#\t\t\t\tif i \u003d\u003d 0:\n#\t\t\t\t\tthisStartDate \u003d sDate\n#\t\t\t\t\tthisEndDate \u003d system.date.setTime(system.date.addDays(sDate, 1) , 0, 0, 0)\n#\n#\t\t\t\t\t#Calculate view instance width.\n#\t\t\t\t\tfirstDayHoursBetween \u003d system.date.hoursBetween(thisStartDate, thisEndDate) * 1.0\n#\t\t\t\t\tviewWidthPercent \u003d (firstDayHoursBetween/hoursBetween) * 100\n#\t\t\t\t\t\n#\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n#\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"firstDayHoursBetween: %s\" % (firstDayHoursBetween))\n#\t\t\t\t\tsystem.perspective.print(\"First viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"First relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n#\t\t\t\t\t\n#\t\t\t\t#Mid \u0026 whole days.\n#\t\t\t\telif days \u003e\u003d 3 and i not in (0, days-1):\n#\t\t\t\t\tthisStartDate \u003d thisEndDate\n#\t\t\t\t\tthisEndDate \u003d system.date.addDays(thisEndDate, 1)\n#\t\t\t\t\tthisCanvasStructure[\"top\"] \u003d relativeTop\n#\t\t\t\t\t\n#\t\t\t\t\t#Calculate view instance width.\n#\t\t\t\t\tviewWidthPercent \u003d 24.0/hoursBetween * 100\n#\t\t\t\t\t\n#\t\t\t\t\tthisCanvasStructure[\"left\"] \u003d (\"%s\" % relativeLeftPercent) + \"%\"\n#\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n#\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole Day\")\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"Mid/Whole relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n#\t\t\t\t\t\n#\t\t\t\t#Last day.\n#\t\t\t\tif i \u003d\u003d days - 1:\n#\t\t\t\t\tthisStartDate \u003d thisEndDate\n#\t\t\t\t\tthisEndDate \u003d eDate\n#\n#\t\t\t\t\t#Calcluate view instance width.\n#\t\t\t\t\tlastDayHoursBetween \u003d system.date.hoursBetween(thisStartDate, thisEndDate) * 1.0\n#\t\t\t\t\tviewWidthPercent \u003d lastDayHoursBetween/hoursBetween * 100\n#\t\t\t\t\t\n#\t\t\t\t\tthisCanvasStructure[\"top\"] \u003d relativeTop\n#\t\t\t\t\tthisCanvasStructure[\"left\"] \u003d (\"%s\" % (relativeLeftPercent)) + \"%\"\n#\t\t\t\t\tthisCanvasStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n#\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"lastDayHoursBetween: %s\" % (lastDayHoursBetween))\n#\t\t\t\t\tsystem.perspective.print(\"Last viewWidthPercent: %s\" % (viewWidthPercent))\n#\t\t\t\t\tsystem.perspective.print(\"Last relativeLeftPercent: %s\" % (relativeLeftPercent))\n#\t\t\t\t\tsystem.perspective.print(\"------------------------------\")\n#\n#\t\t\t\t#Since relative position is used for the view instances, increment the left and top properties for each day/instance.\n#\t\t\t\trelativeLeftPercent +\u003d viewWidthPercent\n#\t\t\t\trelativeTop -\u003d 110\n#\t\t\t\n#\t\t\t#Set this view instance\u0027s start \u0026 end date.\n#\t\t\tthisCanvasStructure[\"viewParams\"][\"startDate\"] \u003d thisStartDate\n#\t\t\tthisCanvasStructure[\"viewParams\"][\"endDate\"] \u003d thisEndDate\n#\t\t\t\n#\t\t\t#Append view instance to the canvasInstances list.\n#\t\t\tcanvasInstances.append(thisCanvasStructure)\n#\t\t\n#\t\t#Set the View Canvas instances property.\n#\t\tself.getSibling(\"ViewCanvas\").props.instances \u003d canvasInstances\n#\t\t\n#\telse:\n#\t\t#REPLACE w/ popup message to notify user.\n#\t\tsystem.perspective.print(\"Selected end date must be after start date. Reselect start and/or end date.\")\n#\t"
+            }
+          },
+          "custom.dateRange.endDate": {
+            "binding": {
+              "config": {
+                "path": "./endDate.props.value"
+              },
+              "type": "property"
+            }
+          },
+          "custom.dateRange.startDate": {
+            "binding": {
+              "config": {
+                "path": "./startDate.props.value"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "ViewCanvas"
+        },
+        "position": {
+          "basis": "81px"
+        },
+        "props": {
+          "enableTransitions": false,
+          "instances": [
+            {
+              "bottom": "auto",
+              "height": "80px",
+              "left": "0px",
+              "position": "relative",
+              "right": "auto",
+              "style": {
+                "classes": ""
+              },
+              "top": "0px",
+              "viewParams": {
+                "endDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1618038000000
+                },
+                "startDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1617986040000
+                }
+              },
+              "viewPath": "equipment-schedule/schedule/schedule-components/time-scale",
+              "width": "23.1736687182%",
+              "zIndex": "auto"
+            },
+            {
+              "bottom": "auto",
+              "height": "80px",
+              "left": "23.1736687182%",
+              "position": "relative",
+              "right": "auto",
+              "style": {
+                "classes": ""
+              },
+              "top": -80,
+              "viewParams": {
+                "endDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1618124400000
+                },
+                "startDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1618038000000
+                }
+              },
+              "viewPath": "equipment-schedule/schedule/schedule-components/time-scale",
+              "width": "38.533583088%",
+              "zIndex": "auto"
+            },
+            {
+              "bottom": "auto",
+              "height": "80px",
+              "left": "61.7072518063%",
+              "position": "relative",
+              "right": "auto",
+              "style": {
+                "classes": ""
+              },
+              "top": -160,
+              "viewParams": {
+                "endDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1618210260000
+                },
+                "startDate": {
+                  "$": [
+                    "ts",
+                    192,
+                    1618937998350
+                  ],
+                  "$ts": 1618124400000
+                }
+              },
+              "viewPath": "equipment-schedule/schedule/schedule-components/time-scale",
+              "width": "38.2927481937%",
+              "zIndex": "auto"
+            }
+          ],
+          "style": {
+            "overflow": "hidden"
+          },
+          "transitionSettings": {
+            "duration": "1s",
+            "timingFunction": "linear"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.viewcanvas"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

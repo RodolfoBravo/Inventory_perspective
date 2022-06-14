@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "fontSize": "14px",
+      "textAlign": "center",
+      "textOverflow": "clip"
+    }
+  }
+}

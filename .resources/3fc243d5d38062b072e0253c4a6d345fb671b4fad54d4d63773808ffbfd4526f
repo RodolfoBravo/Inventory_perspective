@@ -1,0 +1,253 @@
+{
+  "custom": {},
+  "params": {
+    "id_metric": 12
+  },
+  "propConfig": {
+    "params.id_metric": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 384,
+      "width": 277
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Name:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Name"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Type:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "props": {
+          "options": [
+            {
+              "label": "Integer",
+              "value": "int"
+            },
+            {
+              "label": "Float",
+              "value": "float"
+            },
+            {
+              "label": "String",
+              "value": "string"
+            }
+          ],
+          "value": "float"
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Units"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Units"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Target"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Target"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": 100
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Warning Limit"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Warning"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": 90
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Danger Limit"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Danger"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": 80
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tname \u003d self.parent.parent.getChild(\"TextField_Name\").props.text\n\ttype \u003d self.parent.parent.getChild(\"Dropdown\").props.value\n\tdecimals \u003d 2\n\tunits \u003d self.parent.parent.getChild(\"TextField_Units\").props.text\n\tid_metric \u003d int(self.view.params.id_metric)\n\ttarget \u003d self.parent.parent.getChild(\"TextField_Target\").props.text\n\twarning \u003d self.parent.parent.getChild(\"TextField_Warning\").props.text\n\tdanger \u003d self.parent.parent.getChild(\"TextField_Danger\").props.text\n\tquery \u003d \u0027INSERT INTO c_variables (variable_name,variable_datatype,variable_decimals,variable_units,id_metric,target,warning_limit,danger_limit) VALUES (?,?,?,?,?,?,?,?)\u0027\n\tsystem.db.runPrepUpdate(query,[name,type,decimals,units,id_metric,target,warning,danger])\n\tsystem.perspective.sendMessage(\u0027Refresh\u0027)\n\tsystem.perspective.closePopup(\u00275ZNu4nTl\u0027)\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u00275ZNu4nTl\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px"
+            },
+            "props": {
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "42px"
+        },
+        "props": {
+          "justify": "space-between"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "margin": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

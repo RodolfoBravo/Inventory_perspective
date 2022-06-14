@@ -1,0 +1,326 @@
+{
+  "custom": {
+    "dateLabel": "7 Wednesday",
+    "maxValue": 22,
+    "minValue": 9
+  },
+  "params": {
+    "endDate": {
+      "$": [
+        "ts",
+        0,
+        1617917809563
+      ],
+      "$ts": 1617858000000
+    },
+    "startDate": {
+      "$": [
+        "ts",
+        0,
+        1617917628267
+      ],
+      "$ts": 1617811200000
+    }
+  },
+  "propConfig": {
+    "custom.dateLabel": {
+      "binding": {
+        "config": {
+          "expression": "toInt(getDayOfMonth({view.params.startDate})) + \" \" +\r\n\tcase( \ttoInt(getDayOfWeek({view.params.startDate})),\r\n\t\t\t1, \"Sunday\",\r\n\t\t\t2, \"Monday\",\r\n\t\t\t3, \"Tuesday\",\r\n\t\t\t4, \"Wednesday\",\r\n\t\t\t5, \"Thursday\",\r\n\t\t\t6, \"Friday\",\r\n\t\t\t7, \"Sunday\",\r\n\t\t\t\"ERROR\"\r\n\t)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.maxValue": {
+      "binding": {
+        "config": {
+          "expression": "if(\ttoInt(getHour24({view.params.endDate})) \u003d 0,\r\n\t23.99999,\r\n\ttoInt(getHour24({view.params.endDate})) + getMinute({view.params.endDate})/60.0\r\n)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.minValue": {
+      "binding": {
+        "config": {
+          "expression": "if(\ttoInt(getHour24({view.params.startDate})) \u003d 0,\r\n\t0.000001,\r\n\ttoInt(getHour24({view.params.startDate})) + getMinute({view.params.startDate})/60.0\r\n)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.endDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 85,
+      "width": 588
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "LinearScale"
+            },
+            "position": {
+              "basis": "197px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.maxValue": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.maxValue"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.minValue": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.minValue"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "fineTicks": {
+                "color": "#FF0000",
+                "span": 0.25
+              },
+              "indicators": [
+                {
+                  "color": "",
+                  "extent": 15,
+                  "indicatorStyle": "range",
+                  "label": "",
+                  "labelAngle": 270,
+                  "labelColor": "",
+                  "length": 25,
+                  "opacity": 0,
+                  "stroke": 1.5,
+                  "value": 85
+                },
+                {
+                  "color": "",
+                  "extent": 2,
+                  "indicatorStyle": "wedge",
+                  "label": "",
+                  "labelAngle": 270,
+                  "labelColor": "",
+                  "length": 25,
+                  "opacity": 0,
+                  "stroke": 2,
+                  "value": 20
+                }
+              ],
+              "majorTicks": {
+                "length": 15,
+                "span": 2
+              },
+              "minorTicks": {
+                "span": 1
+              }
+            },
+            "type": "ia.display.linear-scale"
+          }
+        ],
+        "meta": {
+          "name": "timeScale"
+        },
+        "position": {
+          "basis": "131px",
+          "display": false,
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblDate"
+            },
+            "position": {
+              "size": "large"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.dateLabel"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/Schedule/Schedule-Components/Time-Scale/Date-Label"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "lblDate_0"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "toInt(getDayOfMonth({view.params.startDate}))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/Schedule/Schedule-Components/Time-Scale/Date-Label"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "BreakpointContainer"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "breakpoint": 125
+        },
+        "type": "ia.container.breakpt"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "LinearScale"
+                },
+                "position": {
+                  "basis": "197px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.maxValue": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.maxValue"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.minValue": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.minValue"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "fineTicks": {
+                    "color": "C0C0C0",
+                    "span": 0.25
+                  },
+                  "indicators": [
+                    {
+                      "color": "",
+                      "extent": 15,
+                      "indicatorStyle": "range",
+                      "label": "",
+                      "labelAngle": 270,
+                      "labelColor": "",
+                      "length": 25,
+                      "opacity": 0,
+                      "stroke": 1.5,
+                      "value": 85
+                    },
+                    {
+                      "color": "",
+                      "extent": 2,
+                      "indicatorStyle": "wedge",
+                      "label": "",
+                      "labelAngle": 270,
+                      "labelColor": "",
+                      "length": 25,
+                      "opacity": 0,
+                      "stroke": 2,
+                      "value": 20
+                    }
+                  ],
+                  "labels": {
+                    "style": {
+                      "classes": "EquipmentSchedule/Schedule/Schedule-Components/Time-Scale/Time-Scale-Label"
+                    }
+                  },
+                  "majorTicks": {
+                    "length": 15,
+                    "span": 2
+                  },
+                  "minorTicks": {
+                    "color": "#C0C0C0",
+                    "span": 1
+                  }
+                },
+                "type": "ia.display.linear-scale"
+              }
+            ],
+            "meta": {
+              "name": "timeScale"
+            },
+            "position": {
+              "size": "large"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "BreakpointContainer_0"
+        },
+        "position": {
+          "basis": "71px"
+        },
+        "props": {
+          "breakpoint": 100
+        },
+        "type": "ia.container.breakpt"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "EquipmentSchedule/Schedule/Schedule-Components/Time-Scale/Container",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

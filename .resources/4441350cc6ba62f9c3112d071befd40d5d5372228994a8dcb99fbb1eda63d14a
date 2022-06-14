@@ -1,0 +1,24 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--warning)",
+      "borderStyle": "none",
+      "boxShadow": "none",
+      "textTransform": "uppercase"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "var(--warning)"
+      }
+    },
+    {
+      "pseudo": "active",
+      "style": {
+        "color": "var(--neutral-30)"
+      }
+    }
+  ]
+}

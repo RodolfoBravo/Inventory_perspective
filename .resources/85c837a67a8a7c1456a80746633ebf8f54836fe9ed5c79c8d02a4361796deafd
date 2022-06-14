@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "fontSize": "20px",
+      "fontWeight": "bold",
+      "lineHeight": "32px"
+    }
+  }
+}

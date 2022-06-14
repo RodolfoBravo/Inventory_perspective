@@ -1,0 +1,398 @@
+{
+  "custom": {
+    "color": "#FF0000",
+    "metric": 1,
+    "status": 2,
+    "target": 100,
+    "value": "1 2101/03/2021"
+  },
+  "params": {
+    "id_metric": 1,
+    "id_range": 2,
+    "id_site": 1,
+    "key": "value",
+    "t_stamp": "01/03/2021"
+  },
+  "propConfig": {
+    "custom.color": {
+      "persistent": true
+    },
+    "custom.metric": {
+      "binding": {
+        "config": {
+          "path": "view.params.id_metric"
+        },
+        "transforms": [
+          {
+            "code": "\t\"\"\"query \u003d \u0027select * from c_metrics where id_metric \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[value])\n\t\n\tif len(data)!\u003d 0:\n\t\tmetric_name \u003d \tdata[0][\u0027metric_name\u0027]\n\t\tmetric_description \u003d data[0][\u0027metric_description\u0027]\n\t\tunits \u003d data[0][\u0027metric_units\u0027]\n\t\t\n\telse:\n\t\tmetric_name \u003d \u0027\u0027\n\t\tunits \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"FlexContainer_0\").getChild(\"FlexContainer\").getChild(\"FlexContainer_0\").getChild(\"Label_1\").props.text \u003d units\n\t\"\"\"\n\treturn value #metric_name",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.status": {
+      "persistent": true
+    },
+    "custom.target": {
+      "persistent": true
+    },
+    "custom.value": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.id_metric}+\u0027 \u0027+{view.params.id_range}+{view.params.id_site}+{view.params.t_stamp}"
+        },
+        "transforms": [
+          {
+            "code": "\t\n\t\"\"\"id_metric \u003d int(self.params.id_metric)\n\tid_range \u003d int(self.params.id_range)\n\tid_site \u003d int(self.params.id_site)\n\tt_stamp \u003d self.params.t_stamp\n\tt_stamp \u003d system.date.parse(t_stamp,\u0027dd/MM/yyyy\u0027)\n\tquery \u003d \u0027SELECT * FROM metrics_values WHERE id_metric \u003d ? AND id_range \u003d ? AND id_site \u003d ? AND variable_datetime \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[id_metric,id_range,id_site,t_stamp])\n\t#states 0 if not data\n\tstate \u003d 0\n\tmetricValue \u003d \u0027N/D\u0027\n\tmetricTarget \u003d \u0027\u0027\n\tmetricWarning \u003d \u0027\u0027\n\tmetricDanger \u003d \u0027\u0027\n\tif len(data)!\u003d0:\n\t\tmetricValue \u003d data[0][\u0027value\u0027]\n\t\tmetricTarget \u003d data[0][\u0027target\u0027]\n\t\tmetricWarning \u003d data[0][\u0027warning_limit\u0027]\n\t\tmetricDanger \u003d data[0][\u0027danger_limit\u0027]\n\t\tif metricTarget \u003cmetricDanger:\n\t\t\tif metricValue \u003c metricWarning:\n\t\t\t\tstate \u003d 1 #OK\n\t\t\telif metricValue \u003c metricDanger:\n\t\t\t\tstate \u003d 2 #Warning\n\t\t\telse:\n\t\t\t\tstate \u003d 3 #Danger\n\t\telse:\n\t\t\tif metricValue \u003e metricWarning:\n\t\t\t\tstate \u003d 1 #OK\n\t\t\telif metricValue \u003e metricDanger:\n\t\t\t\tstate \u003d 2 #Warning\n\t\t\telse:\n\t\t\t\tstate \u003d 3 #Danger\n\tself.custom.status \u003d state\n\tself.custom.target \u003d metricTarget\"\"\"\n\treturn value #metricValue\n\t\n\t\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.id_metric": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_range": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.t_stamp": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 49,
+      "width": 384
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.color": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "#00FF00",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 1,
+                          "output": "#FF0000"
+                        },
+                        {
+                          "input": 2,
+                          "output": "#00D9D9"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.status}\u003d1,\"material/arrow_drop_down\",\r\nif({view.custom.status}\u003d2,\"material/horizontal_rule\",\r\n\"material/arrow_drop_up\"))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.metric"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "11px",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "20%",
+                      "display": false
+                    },
+                    "props": {
+                      "alignVertical": "bottom",
+                      "style": {
+                        "fontSize": "8px"
+                      },
+                      "text": "A:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "80%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.value"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "alignVertical": "bottom",
+                      "style": {
+                        "fontSize": "20px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "70%"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "20%"
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": "8px"
+                      },
+                      "text": "T:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "80%"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.target"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": "10px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "basis": "20%"
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": "8px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "40%"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "40%"
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "#000000",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 0,
+                          "output": "#808080"
+                        },
+                        {
+                          "input": 1,
+                          "output": "#569317"
+                        },
+                        {
+                          "input": 2,
+                          "output": "#FFAC47"
+                        },
+                        {
+                          "input": 3,
+                          "output": "#FF0000"
+                        }
+                      ],
+                      "outputType": "color",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "borderBottomRightRadius": "10px",
+                "borderTopRightRadius": "10px",
+                "color": "#FFFBFB",
+                "fontSize": "15px",
+                "overflow": "hidden",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "draggable": false,
+            "id": "PopupItemMenu",
+            "modal": true,
+            "overlayDismiss": true,
+            "resizable": false,
+            "showCloseIcon": false,
+            "type": "open",
+            "viewParams": {
+              "id_metric": "{view.params.id_metric}",
+              "id_range": "{view.params.id_range}",
+              "id_site": "{view.params.id_site}",
+              "t_stamp": "{view.params.t_stamp}"
+            },
+            "viewPath": "Popups/PopupItemMenu"
+          },
+          "scope": "C",
+          "type": "popup"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#EBEBEB29",
+        "borderBottomLeftRadius": "10px",
+        "borderBottomRightRadius": "10px",
+        "borderTopLeftRadius": "10px",
+        "borderTopRightRadius": "10px",
+        "boxShadow": "0px 0px 2px rgba(0, 0, 5, 0.50)",
+        "cursor": "pointer",
+        "margin": "2px"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "Refresh",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.refreshBinding(\"custom.value\")",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

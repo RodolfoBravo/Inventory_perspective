@@ -1,0 +1,16 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "rodo",
+      "timestamp": "2021-08-02T19:21:16Z"
+    },
+    "lastModificationSignature": "bdd29c6b8bdf1ea1e706a1ee4cba8247cef1d27221428ce58726d171daea9d63"
+  }
+}

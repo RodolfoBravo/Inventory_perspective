@@ -1,0 +1,16 @@
+{
+  "scope": "DG",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "rodo",
+      "timestamp": "2021-08-24T00:47:22Z"
+    },
+    "lastModificationSignature": "749c5cca588846ca66ccfc09340e37f944c8a04337810809119ea44124fa8503"
+  }
+}

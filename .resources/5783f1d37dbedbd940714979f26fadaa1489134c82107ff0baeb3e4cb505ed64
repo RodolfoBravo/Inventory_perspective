@@ -1,0 +1,32 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--neutral-10)",
+      "borderColor": "var(--success)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "boxShadow": "none",
+      "color": "var(--success)",
+      "fontWeight": "normal",
+      "textTransform": "uppercase",
+      "fill": "var(--success)"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "animation": {
+        "duration": "0.2s",
+        "direction": "normal",
+        "iterationCount": "1",
+        "timingFunction": "ease",
+        "keyframes": {
+          "0%": {},
+          "100%": {
+            "backgroundColor": "var(--neutral-20)"
+          }
+        }
+      }
+    }
+  ]
+}

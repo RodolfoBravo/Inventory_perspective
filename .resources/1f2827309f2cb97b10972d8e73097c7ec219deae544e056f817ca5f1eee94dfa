@@ -1,0 +1,16 @@
+{
+  "base": {
+    "style": {
+      "cursor": "pointer",
+      "fill": "var(--callToAction)"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "fill": "var(--callToAction--hover)"
+      }
+    }
+  ]
+}

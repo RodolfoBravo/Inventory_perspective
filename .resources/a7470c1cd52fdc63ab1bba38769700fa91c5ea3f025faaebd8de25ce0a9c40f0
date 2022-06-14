@@ -1,0 +1,1192 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {
+    "params.feature": {
+      "paramDirection": "input"
+    },
+    "params.key": {
+      "paramDirection": "input"
+    },
+    "params.tier1": {
+      "paramDirection": "input"
+    },
+    "params.tier2": {
+      "paramDirection": "input"
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "icon": "room",
+            "text": "Assign location"
+          },
+          "path": "Page/Embedded/Title"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "111px"
+            },
+            "props": {
+              "style": {
+                "fontWeight": "bold"
+              },
+              "text": "ID Work Order:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "custom": {
+              "value": 0
+            },
+            "meta": {
+              "name": "TextField"
+            },
+            "position": {
+              "basis": "219px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]Inventory/location_wo"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "13px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "config": {
+                      "type": "ANY",
+                      "uuid": "74bfb0f7-4cb6-4d00-948a-309ccf0856b6"
+                    },
+                    "context": {
+                      "action": "location_wo"
+                    }
+                  },
+                  "scope": "C",
+                  "type": "native/barcode"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "94px"
+            },
+            "props": {
+              "image": {
+                "height": 36,
+                "icon": {
+                  "path": "material/qr_code_scanner"
+                },
+                "width": 36
+              },
+              "style": {
+                "backgroundColor": "#AAAAAA"
+              },
+              "text": "Scan",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label_4"
+            },
+            "position": {
+              "basis": "13px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "46px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "basis": "11px",
+          "display": 0
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}\u003d1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Code Rack:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "code_rack"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Inventory/location_rack"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "type": "ia.input.text-field"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}\u003d1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "config": {
+                          "type": "ANY",
+                          "uuid": "701734e9-d290-487f-b9d1-e739da711c47"
+                        },
+                        "context": {
+                          "action": "location_rack"
+                        }
+                      },
+                      "scope": "C",
+                      "type": "native/barcode"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/qr_code_scanner"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "#AAAAAA"
+                  },
+                  "text": "",
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_5"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}\u003d1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Item:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "custom": {
+                  "select_value_str": "100014702"
+                },
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tdata \u003d system.dataset.toPyDataSet(self.props.options)\n\tvalor \u003d int(self.props.value)\n\tquery \u003d system.db.runPrepQuery(\u0027select partnumber from work_order  where id_work \u003d ?\u0027,[valor],\u0027Inventory\u0027)\n\tif query.getRowCount() !\u003d 0:\n\t\tself.custom.select_value_str \u003d query[0][0] "
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Dropdown_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "path": "..../FlexContainer/TextField.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tdata \u003d system.db.runPrepQuery(\u0027select id_work, partnumber from work_order where code_wo \u003d ? and status \u003d 4 \u0027,[value],\u0027Inventory\u0027)\n\treturn data",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Inventory/location_item"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\two \u003d self.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text\n\tif wo !\u003d \u0027\u0027:\n\t\tdata \u003d  system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ? and partnumber \u003d ?\u0027,[wo,value],\u0027Inventory\u0027)\n\t\treturn data[0][\u0027id_work\u0027]\n\telse:\n\t\treturn 0",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "type": "ia.input.dropdown"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_2"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": ".../FlexContainer/TextField.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\two \u003d value\n\tif wo !\u003d \u0027\u0027:\n\t\tdata \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[wo],\u0027Inventory\u0027)\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\ttype \u003d data[0][\u0027type\u0027]\n\t\t\treturn not type\n\t\telse:\t\n\t\t\treturn False\n\telse:\n\t\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}\u003d1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "config": {
+                          "type": "ANY",
+                          "uuid": "e7b5dc23-6663-46d6-9a2e-9b5dcc6158ef"
+                        },
+                        "context": {
+                          "action": "location_item"
+                        }
+                      },
+                      "scope": "C",
+                      "type": "native/barcode"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/qr_code_scanner"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "#AAAAAA"
+                  },
+                  "text": "",
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_6"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": ".../FlexContainer/TextField.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\two \u003d value\n\tif wo !\u003d \u0027\u0027:\n\t\tdata \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[wo],\u0027Inventory\u0027)\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\ttype \u003d data[0][\u0027type\u0027]\n\t\t\treturn not type\n\t\telse:\t\n\t\t\treturn False\n\telse:\t\n\t\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_4"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\t\"\"\"code rack: \n\t\tRack \u003d r\n\t\tNivel \u003d n\n\t\tSection \u003d s\n\t\"\"\"\n\tdata \u003d self.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data\n\tcode_wo \u003d self.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text\n\tcode_rack \u003d self.parent.parent.getChild(\"FlexContainer_1\").getChild(\"code_rack\").props.text\n\two_valid \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[code_wo],\u0027Inventory\u0027)\n\tif wo_valid.getRowCount() !\u003d 0:\n\t\ttype \u003d wo_valid[0][\u0027type\u0027]\n\t\tif type:\n\t\t\tif data.getRowCount() !\u003d 0 and code_wo !\u003d \u0027\u0027 and code_rack !\u003d \u0027\u0027:\n\t\t\t#code_rack \u003d \u00271r;2s;3n\u0027\n\t\t\t\tcode_rack \u003d code_rack.split(\";\")\n\t\t\t\track \u003d code_rack[0]\n\t\t\t\tsection \u003d code_rack[1]\n\t\t\t\tnivel \u003d code_rack[2]\n\t\t\t\tfor i in data:\t\n\t\t\t\t\titem \u003d i[\u0027partnumber\u0027]\n\t\t\t\t\tqty \u003d i[\u0027quantity\u0027]\n\t\t\t\t\targ \u003d [rack, code_wo, item, nivel, section, qty]\n\t\t\t\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO location(area,wo,partnumber,nivel,section, quantity) values(?,?,?,?,?,?)\u0027,arg,\u0027Inventory\u0027)\n\t\t\t\t\t\n\t\t\t\tsystem.db.runPrepUpdate(\u0027UPDATE work_order SET status \u003d 3 where code_wo \u003d ?\u0027,[code_wo],\u0027inventory\u0027)\n\t\t\t\tAlerts.showAlert(\"success\", \"Item location Saved\", \"The location of the material was saved correctly\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\t\t\t\tself.parent.parent.getChild(\"FlexContainer_1\").getChild(\"code_rack\").props.text \u003d \u0027\u0027\n\t\t\t\t\t\n\t\t\t\t\t#Alerts.showAlert(\"error\", \"I\u0027m Sorry\", \"Can not add that number of pieces exceed the number of total pieces\", \"true\", \"Disconnect Hal\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\telse:\n\t\t\tif data.getRowCount() !\u003d 0 and code_wo !\u003d \u0027\u0027 and code_rack !\u003d \u0027\u0027:\n\t\t\t\tcode_rack \u003d code_rack.split(\";\")\n\t\t\t\track \u003d code_rack[0]\n\t\t\t\tsection \u003d code_rack[1]\n\t\t\t\tnivel \u003d code_rack[2]\n\t\t\t\titem \u003d self.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").custom.select_value_str\n\t\t\t\tfor i in data:\n\t\t\t\t\titemdata \u003d i[\u0027partnumber\u0027]\n\t\t\t\t\tif item \u003d\u003d itemdata:\n\t\t\t\t\t\tqty \u003d i[\u0027quantity\u0027]\n\t\t\t\targ \u003d [rack, code_wo, item, nivel, section, qty]\n\t\t\t\tvalid \u003d system.db.runPrepQuery(\u0027select * from location where wo \u003d ? and partnumber \u003d ?\u0027,[code_wo,item],\u0027Inventory\u0027)\n\t\t\t\tif valid.getRowCount() \u003d\u003d0 :\n\t\t\t\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO location(area,wo,partnumber,nivel,section, quantity) values(?,?,?,?,?,?)\u0027,arg,\u0027Inventory\u0027)\n\t\t\t\t\tsystem.db.runPrepUpdate(\u0027UPDATE work_order SET status \u003d 5 where code_wo \u003d ? and partnumber \u003d ?\u0027,[code_wo,item],\u0027inventory\u0027)\n\t\t\t\t\tAlerts.showAlert(\"success\", \"Item location Saved\", \"The space where the material was located was released\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\t\t\two_valid \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[code_wo],\u0027Inventory\u0027)\n\t\t\t\t\tif wo_valid.getRowCount()\u003d\u003d0:\n\t\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_1\").getChild(\"code_rack\").props.text \u003d \u0027\u0027\n\t\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").props.value \u003d 0\n\t\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\t\t\t\t\telse:\n\t\t\t\t\t\tdatadrop \u003d system.db.runPrepQuery(\u0027select id_work, partnumber from work_order where code_wo \u003d ? and status \u003d 4 \u0027,[code_wo],\u0027Inventory\u0027)\n\t\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").props.options \u003d datadrop\n\t\t\t\t\t\tdata \u003d system.db.runNamedQuery(\"location\",{\"wo\":code_wo})\n\t\t\t\t\t\tpydata \u003d system.dataset.toPyDataSet(data)\n\t\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data \u003d pydata\n\t\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").props.value \u003d 0\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#0DA210"
+                  },
+                  "text": "Save location"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tcode_wo \u003d self.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text\n\theader \u003d [\u0027Status\u0027,\u0027Defect\u0027,\u0027Quantity\u0027]\n\tif code_wo !\u003d \u0027\u0027:\n\t\tquery \u003d \u0027select * from work_order where code_wo \u003d ?\u0027\n\t\tdata \u003d system.db.runPrepQuery(query,[code_wo],\u0027Inventory\u0027)\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\tstatus \u003d data[0][\u0027status\u0027]\n\t\t\tqty \u003d data[0][\u0027quantity\u0027]\n\t\t\tdlist \u003d [(\u0027Pieces OK\u0027,\u0027None\u0027,qty)]\n\t\t\tdtable \u003d system.dataset.toDataSet(header,dlist)\n\t\telse:\n\t\t\tdtable \u003d dtable \u003d system.dataset.toDataSet(header,[])\n\telse:\n\t\tdtable \u003d dtable \u003d system.dataset.toDataSet(header,[])\n\t\n\tself.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data \u003d dtable"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#AC0000"
+                  },
+                  "text": "Cancel"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_3"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_5"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "basis": "776px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "path": ".../FlexContainer/TextField.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tcode_wo \u003d value\n\tif code_wo !\u003d \u0027\u0027:\n\t\tdata \u003d system.dataset.toPyDataSet(system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[code_wo],\u0027Inventory\u0027))\n\t\tdataloc \u003d system.dataset.toDataSet([\u0027\u0027],[])\n\t\tflag_in \u003d False\n\t\tflag_out \u003d False\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\tfor i in data:\n\t\t\t\ttype \u003d i[\u0027type\u0027]\n\t\t\t\tstatus \u003d i[\u0027status\u0027]\n\t\t\t\tif type and status \u003d\u003d 2:\n\t\t\t\t\tflag_in \u003d True\n\t\t\t\telif not type and status \u003d\u003d 4:\n\t\t\t\t\tflag_out \u003d True\n\t\t\tif flag_in:\n\t\t\t\tdata \u003d system.db.runNamedQuery(\"location\",{\"wo\":code_wo})\n\t\t\t\tpydata \u003d system.dataset.toPyDataSet(data)\n\t\t\telif flag_out:\n\t\t\t\tdata \u003d system.db.runNamedQuery(\"location\",{\"wo\":code_wo})\n\t\t\t\tpydata \u003d system.dataset.toPyDataSet(data)\n\t\t\telse:\n\t\t\t\tAlerts.showAlert(\"warning\", \"Order not ready for location\", \"Work Order not ready for location\", \"true\", \"OK\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\t\tpydata \u003d dataloc\n\t\t\treturn pydata\n\t\telse:\n\t\t\tAlerts.showAlert(\"error\", \"Order does not exist\", \"Order does not exist\", \"true\", \"OK\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\treturn dataloc\n\t\t\t",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "code_wo",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Work Order"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "partnumber",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Item"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "quantity",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Quantity"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "name",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Status"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                  "editable": false,
+                  "field": "t_stamp",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Time"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Page/Page"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "overflow": "visible",
+      "paddingBottom": "5px",
+      "paddingTop": "5px"
+    }
+  }
+}

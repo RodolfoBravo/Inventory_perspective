@@ -1,0 +1,8 @@
+{
+  "base": {
+    "style": {
+      "marginLeft": "150px",
+      "overflow": "hidden"
+    }
+  }
+}

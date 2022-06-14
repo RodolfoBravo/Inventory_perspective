@@ -1,0 +1,36 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--info)",
+      "boxShadow": "none"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "animation": {
+        "duration": "0.2s",
+        "direction": "normal",
+        "iterationCount": "1",
+        "timingFunction": "ease",
+        "keyframes": {
+          "0%": {
+            "backgroundColor": "var(--info)",
+            "boxShadow": "none"
+          },
+          "100%": {
+            "backgroundColor": "#448BB7",
+            "boxShadow": "none"
+          }
+        }
+      }
+    },
+    {
+      "pseudo": "active",
+      "style": {
+        "backgroundColor": "var(--info)",
+        "boxShadow": "none"
+      }
+    }
+  ]
+}

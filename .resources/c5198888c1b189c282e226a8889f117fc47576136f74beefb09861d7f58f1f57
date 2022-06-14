@@ -1,0 +1,287 @@
+{
+  "custom": {},
+  "params": {
+    "id_group": 1,
+    "id_range": 2,
+    "id_site": 1,
+    "t_stamp": "01/03/2021"
+  },
+  "propConfig": {
+    "params.id_group": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_range": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.t_stamp": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 565,
+      "width": 397
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Metric:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown_Metric"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "id_group": "{view.params.id_group}"
+                },
+                "queryPath": "getMetricsByGroup"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "value": 2
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Class:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown_Class"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "props": {
+          "options": [
+            {
+              "label": "Note",
+              "value": 0
+            },
+            {
+              "label": "Action",
+              "value": 1
+            },
+            {
+              "label": "Issue",
+              "value": 2
+            }
+          ],
+          "value": 0
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Status"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown_Status"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "props": {
+          "options": [
+            {
+              "label": "Open",
+              "value": 0
+            },
+            {
+              "label": "In Process",
+              "value": 1
+            },
+            {
+              "label": "Closed",
+              "value": 2
+            },
+            {
+              "label": "Hold",
+              "value": 3
+            },
+            {
+              "label": "Delayed",
+              "value": 4
+            }
+          ],
+          "value": 0
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "End Date:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "DateTimeInput"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "view.params.t_stamp"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn system.date.parse(value,\u0027dd/MM/yyyy\u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "format": "D/MMM/YYYY",
+          "formattedValue": "28/Feb/2021",
+          "pickerType": "date"
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Owner:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextField_Owner"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "text": "Description:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TextArea_Description"
+        },
+        "position": {
+          "basis": "160px"
+        },
+        "props": {
+          "deferUpdates": false
+        },
+        "type": "ia.input.text-area"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tid_site \u003d self.view.params.id_site\n\tid_range \u003d self.view.params.id_range\n\tid_group \u003d self.view.params.id_group\n\tt_stamp \u003d self.view.params.t_stamp\n\tt_stamp \u003d system.date.parse(t_stamp,\u0027dd/MM/yyyy\u0027)\n\tid_status \u003d self.getSibling(\"Dropdown_Status\").props.value\n\tdescription \u003d self.getSibling(\"TextArea_Description\").props.text\n\tnoteClass \u003d self.getSibling(\"Dropdown_Class\").props.value\n\tid_metric \u003d self.getSibling(\"Dropdown_Metric\").props.value\n\tend_date \u003d system.date.setTime(self.getSibling(\"DateTimeInput\").props.value,0,0,0)\n\towner \u003d self.getSibling(\"TextField_Owner\").props.text\n\tquery \u003d \u0027insert into metrics_notes (description,note_class,id_metric,id_site,id_range,id_group,t_stamp,id_status, end_date,owner) values (?,?,?,?,?,?,?,?,?,?)\u0027\n\tparams \u003d [description,noteClass,id_metric,id_site,id_range,id_group,t_stamp,id_status,end_date,owner]\n\tsystem.db.runPrepUpdate(query,params)\n\tsystem.perspective.closePopup(\u0027AddNote\u0027)\n\tsystem.perspective.sendMessage(\u0027Refresh\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "props": {
+          "text": "Save"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "margin": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

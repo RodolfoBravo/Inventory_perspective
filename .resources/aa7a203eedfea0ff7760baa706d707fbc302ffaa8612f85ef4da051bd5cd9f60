@@ -1,0 +1,64 @@
+{
+  "custom": {},
+  "params": {
+    "eventID": "value",
+    "leadColor": "#D5D5D5",
+    "leadTime": "value"
+  },
+  "propConfig": {
+    "params.eventID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.leadColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.leadTime": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 55,
+      "width": 55
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "view.params.leadColor"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "EquipmentSchedule/EquipmentRow/ScheduledEventLeadTime/Container",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

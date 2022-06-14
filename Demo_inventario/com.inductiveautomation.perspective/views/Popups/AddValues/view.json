@@ -1,0 +1,894 @@
+{
+  "custom": {
+    "Metric_Equation": "{73}",
+    "canBeEvaluated": true,
+    "formatDate": "value",
+    "metric_value": 1
+  },
+  "params": {
+    "id_metric": 2,
+    "id_range": 2,
+    "id_site": 1,
+    "t_stamp": "01/03/2021"
+  },
+  "propConfig": {
+    "custom.Metric_Equation": {
+      "persistent": true
+    },
+    "custom.canBeEvaluated": {
+      "persistent": true
+    },
+    "custom.formatDate": {
+      "persistent": true
+    },
+    "custom.metric_value": {
+      "persistent": true
+    },
+    "params.id_metric": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_range": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.id_site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.t_stamp": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 464,
+      "width": 478
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "Equation": "value"
+        },
+        "meta": {
+          "name": "Label_Metric"
+        },
+        "position": {
+          "basis": "62px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.id_metric"
+              },
+              "transforms": [
+                {
+                  "code": "\tid_metric \u003d int(self.view.params.id_metric)\n\tid_range \u003dself.view.params.id_range\n\tid_site \u003d self.view.params.id_site\n\tt_stamp \u003d self.view.params.t_stamp\n\tt_stamp \u003d system.date.parse(t_stamp,\u0027dd/MM/yyyy\u0027)\n\tquery \u003d \u0027select * from metrics_values where id_metric \u003d ? AND id_range \u003d ? AND id_site \u003d ? AND variable_datetime \u003d ?\u0027\n\tcurrentData \u003d system.db.runPrepQuery(query,[id_metric,id_range,id_site,t_stamp])\n\t\n\tquery \u003d \u0027select * from c_metrics where id_metric \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[int(value)])\n\t#check if data is already inserted\n\tif len(data)!\u003d0:\n\t\tmetric \u003d data[0][\u0027metric_name\u0027]\n\t\tequation \u003d data[0][\u0027metric_equation\u0027]\n\t\ttarget \u003d data[0][\u0027target\u0027]\n\t\twarning \u003d data[0][\u0027warning_limit\u0027]\n\t\tdanger \u003d data[0][\u0027danger_limit\u0027]\n\t\tunits \u003d data[0][\u0027metric_units\u0027]\n\t\tif len(currentData)!\u003d0:\n\t\t\ttarget \u003d currentData[0][\u0027target\u0027]\n\t\t\twarning \u003d currentData[0][\u0027warning_limit\u0027]\n\t\t\tdanger \u003d currentData[0][\u0027danger_limit\u0027]\n\t#insert default data\n\t\n\telse:\n\t\tmetric \u003d \u0027\u0027\n\t\tequation \u003d \u0027\u0027\n\t\ttarget \u003d 100\n\t\twarning \u003d 90\n\t\tdanger \u003d 80\n\t\tunits \u003d \u0027\u0027\n\tself.parent.getChild(\"FlexContainer_Target\").getChild(\"TextField\").props.text \u003d target\n\tself.parent.getChild(\"FlexContainer_Warning\").getChild(\"TextField\").props.text \u003d warning\n\tself.parent.getChild(\"FlexContainer_Danger\").getChild(\"TextField\").props.text \u003d danger\n\tself.parent.getChild(\"FlexContainer_Inputs\").getChild(\"Label_1\").props.text \u003d units\n\tself.parent.getChild(\"FlexContainer_Target\").getChild(\"Label_1\").props.text \u003d units\n\tself.parent.getChild(\"FlexContainer_Warning\").getChild(\"Label_1\").props.text \u003d units\n\tself.parent.getChild(\"FlexContainer_Danger\").getChild(\"Label_1\").props.text \u003d units\n\t\n\tself.view.custom.Metric_Equation \u003d equation\n\treturn metric",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#0000003D",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.Metric_Equation"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\teq \u003d value\n\teqList \u003d eq.split(\u0027}\u0027)\n\tnewString \u003d \u0027\u0027\n\tquery \u003d \u0027select variable_name from c_variables where id_variable \u003d ?\u0027 \n\tfor param in eqList:\n\t\tif len(param)\u003e0:\n\t\t\tif param.find(\u0027{\u0027)!\u003d-1:\n\t\t\t\tnewString+\u003d(param[0:param.find(\u0027{\u0027)]) #eliminamos variables\n\t\t\t\tvar \u003d param[param.find(\u0027{\u0027)+1:len(param)] #obtenemos id\n\t\t\t\tvarData \u003d system.db.runPrepQuery(query,[var])\n\t\t\t\tif len(varData)!\u003d0:\n\t\t\t\t\tvarName \u003d varData[0][\u0027variable_name\u0027]\n\t\t\t\telse:\n\t\t\t\t\tvarName \u003d \u0027 \"Variable Not Found\" \u0027\n\t\t\t\tnewString +\u003d \u0027 \u0027+str(varName)+ \u0027 \u0027\n\t\t\telse:\n\t\t\t\tnewString +\u003d param\n\t\t\t\n\treturn newString + \u0027 \u003d\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "padding": "10px",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "30%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.Metric_Equation}+{.../Table.props.data}"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\teq \u003d self.view.custom.Metric_Equation\n\teqList \u003d eq.split(\u0027}\u0027)\n\tnewString \u003d \u0027\u0027\n\tquery \u003d \u0027select variable_name from c_variables where id_variable \u003d ?\u0027 \n\tfor param in eqList:\n\t\tif len(param)\u003e0:\n\t\t\tif param.find(\u0027{\u0027)!\u003d-1:\n\t\t\t\tnewString+\u003d(param[0:param.find(\u0027{\u0027)]) #eliminamos variables\n\t\t\t\tvar \u003d param[param.find(\u0027{\u0027)+1:len(param)] #obtenemos id\n\t\t\t\tvarName \u003d \u0027 \"Variable Not Found\" \u0027\n\t\t\t\tfor row in self.parent.parent.getChild(\"Table\").props.data:\n\t\t\t\t\tif int(row[\u0027id_variable\u0027]) \u003d\u003d int(var):\n\t\t\t\t\t\tvarName \u003d row[\u0027value\u0027]\n\t\t\t\t\t\n\t\t\t\tnewString +\u003d \u0027 \u0027+str(varName)+ \u0027 \u0027\n\n\t\t\t\t#newString +\u003d param\n\ttry:\n\t\tresult \u003dstr(eval(newString))\n\t\tself.props.style.color \u003d \u0027#229900\u0027\n\t\tself.view.custom.canBeEvaluated \u003d True\n\t\tself.view.custom.metric_value \u003d eval(newString)\n\texcept:\n\t\tresult \u003d\u0027 can not be evaluated\u0027\n\t\tself.props.style.color \u003d \u0027#FF0000\u0027\n\t\tself.view.custom.canBeEvaluated \u003d False\n\t\tself.view.custom.metric_value \u003d \u0027Error\u0027\n\treturn result",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#229900",
+                "paddingLeft": "10px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_Inputs"
+        },
+        "position": {
+          "basis": "120px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#3E3E3E1C"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_info_2"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60%"
+            },
+            "props": {
+              "style": {
+                "paddingRight": "10px",
+                "textAlign": "right"
+              },
+              "text": "Target \u003d"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TextField"
+            },
+            "position": {
+              "basis": "30%"
+            },
+            "props": {
+              "deferUpdates": false,
+              "text": 1.4
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_Target"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_info_3"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60%"
+            },
+            "props": {
+              "style": {
+                "paddingRight": "10px",
+                "textAlign": "right"
+              },
+              "text": "Warning \u003d"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TextField"
+            },
+            "position": {
+              "basis": "30%"
+            },
+            "props": {
+              "deferUpdates": false,
+              "text": 0.4
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_Warning"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_info_4"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60%"
+            },
+            "props": {
+              "style": {
+                "paddingRight": "10px",
+                "textAlign": "right"
+              },
+              "text": "Danger \u003d"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TextField"
+            },
+            "position": {
+              "basis": "30%"
+            },
+            "props": {
+              "deferUpdates": false,
+              "text": 0.3
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_Danger"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_info_5"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onEditCellCommit": {
+              "config": {
+                "script": "\tself.props.data[event.rowIndex][event.column] \u003d event.value\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.params.id_metric"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n\tid_metric \u003d self.view.params.id_metric\n\tid_site \u003d self.view.params.id_site\n\tid_range \u003d self.view.params.id_range\n\t\n\tt_stamp \u003d system.date.parse(self.view.params.t_stamp,\u0027dd/MM/yyyy\u0027)\n\tyear \u003d system.date.getYear(t_stamp)\n\tmonth \u003d system.date.getMonth(t_stamp)\n\tday \u003d system.date.getDayOfMonth(t_stamp)\n\tt_stamp \u003d system.date.getDate(year,month,day)\n\t\n\td_query \u003d \u0027select * from variables_values where id_metric \u003d ? and id_variable\u003d? and id_site \u003d ? and id_range \u003d ? and variable_datetime \u003d ?\u0027\n\t\n\tc_query \u003d \u0027select * from c_variables where id_metric \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(c_query,[id_metric])\n\theaders \u003d system.dataset.getColumnHeaders(data)\n\tlist \u003d []\n\tfor row in data:\n\t\ttemp \u003d {}\n\t\tid_variable \u003d row[\u0027id_variable\u0027]\n\t\tcurrentData \u003d system.db.runPrepQuery(d_query,[id_metric,id_variable,id_site,id_range,t_stamp])\t\t\n\t\tif len(currentData)!\u003d0:\n\t\t\ttemp \u003d {\n\t\t\t\t\u0027id_variable\u0027:id_variable,\n\t\t\t\t\u0027variable_name\u0027:row[\u0027variable_name\u0027],\n\t\t\t\t\u0027value\u0027:currentData[0][\u0027value\u0027],\n\t\t\t\t\u0027target\u0027:currentData[0][\u0027target\u0027],\n\t\t\t\t\u0027warning_limit\u0027:currentData[0][\u0027warning_limit\u0027],\n\t\t\t\t\u0027danger_limit\u0027:currentData[0][\u0027danger_limit\u0027],\n\t\t\t}\n\t\telse:\n\t\t\ttemp \u003d {\n\t\t\t\t\u0027id_variable\u0027:id_variable,\n\t\t\t\t\u0027variable_name\u0027:row[\u0027variable_name\u0027],\n\t\t\t\t\u0027value\u0027:1,\n\t\t\t\t\u0027target\u0027:row[\u0027target\u0027],\n\t\t\t\t\u0027warning_limit\u0027:row[\u0027warning_limit\u0027],\n\t\t\t\t\u0027danger_limit\u0027:row[\u0027danger_limit\u0027],\n\t\t\t\t\t}\n\t\tlist.append(temp)\n\treturn list",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "id_variable",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "ID"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "variable_name",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Variable Name"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "value",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Value"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "target",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Target"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "warning_limit",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Warning"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "danger_limit",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Danger"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "bottom": false
+          }
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "Refresh",
+              "pageScope": true,
+              "script": "\tself.refreshBinding(\"props.data\")",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label_info_1"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tqueryInsert \u003d \"\"\"INSERT INTO variables_values(\t\t\t\t\t\t\n\t\t\t\t\t\tvalue,\n\t\t\t\t\t\ttarget,\n\t\t\t\t\t\twarning_limit,\n\t\t\t\t\t\tdanger_limit,\n\t\t\t\t\t\tid_site,\n\t\t\t\t\t\tid_metric,\n\t\t\t\t\t\tid_variable,\n\t\t\t\t\t\tid_range,\n\t\t\t\t\t\tvariable_datetime)\n\t\t\t\tVALUES (\n\t\t\t\t\t\t?,?,?,?,?,?,?,?,?\n\t\t\t\t\t\t)\"\"\"\n\t\t\t\t\t\t\t\n\tqueryUpdate \u003d \"\"\"\n\t\t\t\t\tUPDATE variables_values SET\n\t\t\t\t\t\tvalue\u003d?,\n\t\t\t\t\t\ttarget\u003d?,\n\t\t\t\t\t\twarning_limit\u003d?,\n\t\t\t\t\t\tdanger_limit\u003d?\n\t\t\t\tWHERE \tid_site\u003d? AND\n\t\t\t\t\t\tid_metric\u003d? AND\n\t\t\t\t\t\tid_variable\u003d? AND\n\t\t\t\t\t\tid_range\u003d? AND\n\t\t\t\t\t\tvariable_datetime\u003d?\n\t\t\t\t\t\"\"\"\n\tid_site \u003d self.view.params.id_site\n\tid_metric \u003d self.view.params.id_metric\n\tid_range \u003d self.view.params.id_range\n\tt_stamp \u003d self.view.params.t_stamp\n\tt_stamp \u003d system.date.parse(self.view.params.t_stamp,\u0027dd/MM/yyyy\u0027)\n\t#year \u003d system.date.getYear(t_stamp)\n\t#month \u003d system.date.getMonth(t_stamp)\n\t#day \u003d system.date.getDayOfMonth(t_stamp)\n\t#t_stamp \u003d system.date.getDate(year,month,day)\n\tdata \u003d self.getSibling(\"Table\").props.data\n\td_query \u003d \u0027select * from variables_values where id_metric \u003d ? and id_variable\u003d? and id_site \u003d ? and id_range \u003d ? and variable_datetime \u003d ?\u0027\n\t# get data from table\n\tfor row in data:\n\t\tid_variable \u003d row[\u0027id_variable\u0027]\n\t\tvalue \u003d row[\u0027value\u0027]\n\t\ttarget \u003d row[\u0027target\u0027]\n\t\twarning_limit\u003d row[\u0027warning_limit\u0027]\n\t\tdanger_limit \u003d row[\u0027danger_limit\u0027]\t\n\t\tcurrentData \u003d system.db.runPrepQuery(d_query,[id_metric,id_variable,id_site,id_range,t_stamp])\n\t\tparams \u003d [value,target,warning_limit,danger_limit,id_site,id_metric,id_variable,id_range,t_stamp]\n\t\tif len(currentData)\u003d\u003d0:\t\t\n\t\t\tsystem.db.runPrepUpdate(queryInsert,params)\n\t\telse:\n\t\t\tsystem.db.runPrepUpdate(queryUpdate,params)\n\t\n\t#Update for metric\n\tqueryInsert \u003d \"\"\"INSERT INTO metrics_values(\t\t\t\t\t\t\n\t\t\t\t\t\t\tvalue,\n\t\t\t\t\t\t\ttarget,\n\t\t\t\t\t\t\twarning_limit,\n\t\t\t\t\t\t\tdanger_limit,\n\t\t\t\t\t\t\tid_site,\n\t\t\t\t\t\t\tid_metric,\n\t\t\t\t\t\t\tid_range,\n\t\t\t\t\t\t\tvariable_datetime)\n\t\t\t\t\tVALUES (\n\t\t\t\t\t\t\t?,?,?,?,?,?,?,?\n\t\t\t\t\t\t\t)\"\"\"\n\t\t\t\t\t\t\t\t\n\tqueryUpdate \u003d \"\"\"\n\t\t\t\t\tUPDATE metrics_values SET\n\t\t\t\t\t\tvalue\u003d?,\n\t\t\t\t\t\ttarget\u003d?,\n\t\t\t\t\t\twarning_limit\u003d?,\n\t\t\t\t\t\tdanger_limit\u003d?\n\t\t\t\tWHERE \tid_site\u003d? AND\n\t\t\t\t\t\tid_metric\u003d? AND\n\t\t\t\t\t\tid_range\u003d? AND\n\t\t\t\t\t\tvariable_datetime\u003d?\n\t\t\t\t\t\"\"\"\n\t#query for update or insert\n\td_query \u003d \u0027select * from metrics_values where id_metric \u003d ? and id_site \u003d ? and id_range \u003d ? and variable_datetime \u003d ?\u0027\n\t#get Validated Data\n\tvalue \u003d float(self.view.custom.metric_value)\n\ttarget \u003d float(self.parent.getChild(\"FlexContainer_Target\").getChild(\"TextField\").props.text)\n\twarning_limit\u003d float(self.parent.getChild(\"FlexContainer_Warning\").getChild(\"TextField\").props.text)\n\tdanger_limit \u003d float(self.parent.getChild(\"FlexContainer_Danger\").getChild(\"TextField\").props.text)\n\tcurrentData \u003d system.db.runPrepQuery(d_query,[id_metric,id_site,id_range,t_stamp])\n\tparams \u003d [value,target,warning_limit,danger_limit,id_site,id_metric,id_range,t_stamp]\n\tif len(currentData)\u003d\u003d0:\t\t\n\t\tsystem.db.runPrepUpdate(queryInsert,params)\n\telse:\n\t\tsystem.db.runPrepUpdate(queryUpdate,params)\n\tsystem.perspective.sendMessage(\u0027Refresh\u0027)\n\tsystem.perspective.closePopup(\u0027AddValues\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "100px"
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "path": "view.custom.canBeEvaluated"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "text": "Save"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "margin": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

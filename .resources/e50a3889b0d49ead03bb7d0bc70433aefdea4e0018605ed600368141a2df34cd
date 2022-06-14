@@ -1,0 +1,3 @@
+def showAlert(state, title, message, showCloseBtn, btnTextPrimary, btnTextSecondary, btnIconPrimary, btnIconSecondary, btnIconAlignment, btnActionPrimary, btnActionSecondary, btnActionClose):
+	params = {"state":state, "title":title, "message":message, "showCloseBtn":showCloseBtn, "btnTextPrimary":btnTextPrimary, "btnTextSecondary":btnTextSecondary, "btnIconPrimary":btnIconPrimary, "btnIconSecondary":btnIconSecondary, "btnIconAlignment":btnIconAlignment, "btnActionPrimary":btnActionPrimary, "btnActionSecondary":btnActionSecondary, "btnActionClose":btnActionClose}
+	system.perspective.openPopup(id="alertDialog", view="Alerts/alert", params=params, showCloseIcon=False, draggable=False, resizable=False, modal=True, overlayDismiss=True, btnActionPrimary="closePopup")

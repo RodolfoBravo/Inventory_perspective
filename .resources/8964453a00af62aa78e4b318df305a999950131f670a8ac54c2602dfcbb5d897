@@ -1,0 +1,684 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {
+    "params.feature": {
+      "paramDirection": "input"
+    },
+    "params.key": {
+      "paramDirection": "input"
+    },
+    "params.tier1": {
+      "paramDirection": "input"
+    },
+    "params.tier2": {
+      "paramDirection": "input"
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "56px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "icon": "pending_actions",
+            "text": "Pick list"
+          },
+          "path": "Page/Embedded/Title"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onRowClick": {
+                  "config": {
+                    "script": "\tdata \u003d system.dataset.toPyDataSet(self.props.data)\n\trow \u003d event.row\n\two \u003d data[row][\u0027wo\u0027]\n\tself.getSibling(\"Table_0\").custom.wo \u003d wo"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "basis": "776px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "type": "0"
+                    },
+                    "queryPath": "work_order"
+                  },
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "pager": {
+                "bottom": false
+              },
+              "selection": {
+                "data": [
+                  {
+                    "code_wo": "WO20218211",
+                    "id_work": 28,
+                    "name": "Delivered material",
+                    "partnumber": "100014702",
+                    "quantity": 750,
+                    "t_stamp": 1630638668000
+                  }
+                ],
+                "selectedColumn": "code_wo",
+                "selectedRow": 7
+              }
+            },
+            "type": "ia.display.table"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "custom": {
+              "wo": "WO20218211"
+            },
+            "meta": {
+              "name": "Table_0"
+            },
+            "position": {
+              "basis": "776px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "wo": "{this.custom.wo}"
+                    },
+                    "queryPath": "pick_list"
+                  },
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "pager": {
+                "bottom": false
+              }
+            },
+            "type": "ia.display.table"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "12px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "basis": "11px",
+          "display": 0
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_5"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Reason:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "custom": {
+                  "select_value": 1,
+                  "select_value_str": "Corte Plasma/Oxicorte"
+                },
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tdata \u003d system.dataset.toPyDataSet(self.props.options)\n\tvalor \u003d int(self.props.value - 1)\n\tdefect \u003d data.getValueAt(valor,\u0027id_defect\u0027)\n\tname \u003d data.getValueAt(valor,\u0027name\u0027)\n\tself.custom.select_value \u003d defect\n\tself.custom.select_value_str \u003d name"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Dropdown_0"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "queryPath": "defects"
+                      },
+                      "type": "query"
+                    }
+                  }
+                },
+                "props": {
+                  "value": 0
+                },
+                "type": "ia.input.dropdown"
+              },
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "basis": "10px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_2"
+                },
+                "position": {
+                  "basis": "20px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Defect:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "id_subdefect"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "parameters": {
+                          "defect": "toInt({../Dropdown_0.custom.select_value})"
+                        },
+                        "queryPath": "sub_defect"
+                      },
+                      "type": "query"
+                    }
+                  }
+                },
+                "props": {
+                  "value": 0
+                },
+                "type": "ia.input.dropdown"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_2"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}\u003d1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Quantity:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "addQty"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "value": 0
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "60px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "../defects.props.value"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "if({value}!\u003d 1,True,False)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_4"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "91px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tcode_wo \u003d self.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text\n\theader \u003d [\u0027Status\u0027,\u0027Defect\u0027,\u0027Quantity\u0027]\n\tif code_wo !\u003d \u0027\u0027:\n\t\tquery \u003d \u0027select * from work_order where code_wo \u003d ?\u0027\n\t\tdata \u003d system.db.runPrepQuery(query,[code_wo],\u0027Inventory\u0027)\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\tstatus \u003d data[0][\u0027status\u0027]\n\t\t\tqty \u003d data[0][\u0027quantity\u0027]\n\t\t\tdlist \u003d [(\u0027Pieces OK\u0027,\u0027None\u0027,qty)]\n\t\t\tdtable \u003d system.dataset.toDataSet(header,dlist)\n\t\telse:\n\t\t\tdtable \u003d dtable \u003d system.dataset.toDataSet(header,[])\n\telse:\n\t\tdtable \u003d dtable \u003d system.dataset.toDataSet(header,[])\n\t\n\tself.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data \u003d dtable"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#AC0000"
+                  },
+                  "text": "Delete defect"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_3"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "91px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tdefect \u003d self.parent.parent.getChild(\"FlexContainer_2\").getChild(\"id_subdefect\").props.value\n\tqty \u003d self.parent.parent.getChild(\"FlexContainer_1\").getChild(\"addQty\").props.value\n\tdata \u003d self.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data\n\tif data.getRowCount() !\u003d 0 and defect !\u003d 0 and qty !\u003d 0:\n\t\t\tnewData \u003d system.dataset.toPyDataSet(data)\n\t\t\tqty0 \u003d newData[0][\u0027Quantity\u0027] \n\t\t\tsta \u003d \u0027Pieces NOK\u0027 \n\t\t\tnewData \u003d system.dataset.deleteRow(newData,0)\n\t\t\tdefectData \u003d system.db.runPrepQuery(\u0027SELECT * FROM c_subdefect where id_subdefect \u003d ?\u0027,[defect],\u0027Inventory\u0027)\n\t\t\tif defectData.getRowCount() !\u003d 0:\n\t\t\t\tsub_def \u003d defectData[0][\u0027name\u0027]\n\t\t\t\tid \u003d defectData[0][\u0027id_subdefect\u0027]\n\t\t\t\tsubdef \u003d str(id) +\u0027 -\u0027+ str(sub_def)\n\t\t\t\trow \u003d [sta,subdef,qty]\n\t\t\t\tif qty \u003e qty0:\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"id_subdefect\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_1\").getChild(\"addQty\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer_2\").position.display \u003d 0\n\t\t\t\t\tAlerts.showAlert(\"error\", \"I\u0027m Sorry\", \"Can not add that number of pieces exceed the number of total pieces\", \"true\", \"Disconnect Hal\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\t\t\t\n\t\t\t\telse:\n\t\t\t\t\tdif \u003d int(qty0) - int(qty)\n\t\t\t\t\trow0 \u003d [\u0027Pieces OK\u0027,\u0027None\u0027,dif]\n\t\t\t\t\tt_data \u003d system.dataset.addRow(newData, 0,row0) \n\t\t\t\t\tt_data \u003d system.dataset.addRow(t_data, 1,row)\n\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data \u003d t_data\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown_0\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_2\").getChild(\"id_subdefect\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.getChild(\"FlexContainer_1\").getChild(\"addQty\").props.value \u003d 0\n\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer_2\").position.display \u003d 0\n\t\t\t\t\tAlerts.showAlert(\"success\", \"Defective pieces\", \"Defective parts added correctly\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#0DA210"
+                  },
+                  "text": "Save defect"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "150px",
+          "display": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "custom": {
+              "value": 1
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tflag \u003d self.parent.parent.getChild(\"FlexContainer_2\").position.display\n\tif flag:\n\t\tself.parent.parent.getChild(\"FlexContainer_2\").position.display \u003d 0\n\t\tself.parent.parent.getChild(\"Label_5\").position.display \u003d 0\n\telse:\n\t\tself.parent.parent.getChild(\"FlexContainer_2\").position.display \u003d 1\n\t\tself.parent.parent.getChild(\"Label_5\").position.display \u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#D90000"
+              },
+              "text": "Add defect"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label_4"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tdata \u003d system.dataset.toPyDataSet(self.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Table\").props.data)\n\titem \u003d self.parent.parent.getChild(\"FlexContainer_1\").getChild(\"Label_1\").props.text\n\twork_order \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text\n\tcount_nok \u003d 0\n\tdb \u003d \u0027Inventory\u0027\n\tif data.getRowCount() !\u003d 0:\n\t\tfor row in data:\n\t\t\tsta \u003d row[\u0027Status\u0027]\n\t\t\tdefect \u003d row[\u0027Defect\u0027]\n\t\t\tid_def \u003d defect[:2]\n\t\t\tqty \u003d int(row[\u0027Quantity\u0027])\n\t\t\tif sta \u003d\u003d \u0027Pieces OK\u0027:\n\t\t\t\tsign \u003d \u0027+\u0027\n\t\t\t\tif qty !\u003d 0:\n\t\t\t\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO consumer(partnumber,sign,quantity,wo) values(?,?,?,?)\u0027,[item,sign,qty,work_order],db)\n\t\t\t\t\tsystem.db.runPrepUpdate(\u0027UPDATE work_order SET quantity \u003d ? WHERE code_wo \u003d ?\u0027,[qty,work_order])\n\t\t\telif sta \u003d\u003d \u0027Pieces NOK\u0027:\n\t\t\t\tuser \u003d self.session.props.auth.user.userName\n\t\t\t\tsystem.db.runPrepUpdate(\u0027INSERT INTO quarantine(partnumber,work_order,quantity,id_subdefect,user) values(?,?,?,?,?)\u0027,[item,work_order,qty,id_def,user],db)\n\t\t\t\t\t\n\tsystem.db.runPrepUpdate(\u0027UPDATE work_order SET status \u003d 2 where code_wo \u003d ?\u0027,[work_order],db)\n\tself.parent.parent.getChild(\"FlexContainer\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\tAlerts.showAlert(\"Success\", \"Saved data\", \"the data was successfully saved in the system\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\tsystem.tag.write(\u0027[default]Inventory/quality_wo\u0027,\u0027\u0027)\t\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#00AC00"
+              },
+              "text": "Save work order"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_4"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "11px"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Page/Page"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

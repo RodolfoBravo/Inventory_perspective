@@ -1,0 +1,959 @@
+{
+  "custom": {
+    "data": null
+  },
+  "params": {
+    "id_group": 1
+  },
+  "propConfig": {
+    "custom.data": {
+      "binding": {
+        "config": {
+          "path": "view.params.id_group"
+        },
+        "transforms": [
+          {
+            "code": "\tquery \u003d \u0027select * from c_metric_groups where id_group \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[value])\n\tif len(data)!\u003d0:\n\t\tname \u003d data[0][\u0027group_name\u0027]\n\t\tdescription \u003d data[0][\u0027description\u0027]\n\t\tif description\u003d\u003dNone:\n\t\t\tdescription\u003d\u0027\u0027\n\t\tcolor \u003d data[0][\u0027color\u0027]\n\t\ticon \u003d data[0][\u0027icon\u0027]\n\t\tself.getChild(\"root\").getChild(\"Button_Delete\").position.display \u003d True\n\telse:\n\t\tname \u003d \u0027\u0027\n\t\tdescription \u003d \u0027\u0027\n\t\tcolor \u003d \u0027\u0027\n\t\ticon \u003d \u0027\u0027\n\t\tself.getChild(\"root\").getChild(\"Button_Delete\").position.display \u003d False\n\tself.getChild(\"root\").getChild(\"TextField_Name\").props.text \u003d name\n\tself.getChild(\"root\").getChild(\"TextArea_Description\").props.text \u003d description\n\tself.getChild(\"root\").getChild(\"Color\").props.params.value \u003d color\n\tself.getChild(\"root\").getChild(\"Icon\").props.params.value \u003d icon\n\t\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.id_group": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 326,
+      "width": 525
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#009262",
+            "color": "#FFFFFF",
+            "fontSize": "20px",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Check-in Work Order"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tid_group \u003d self.view.params.id_group\n\tquery \u003d \u0027select * from c_metric_groups where id_group \u003d ?\u0027\n\tdata \u003d system.db.runPrepQuery(query,[id_group])\n\tif len(data)!\u003d0:\n\t\tquery \u003d \u0027delete from c_metric_groups where id_group \u003d ?\u0027\n\t\tsystem.db.runPrepUpdate(query,[id_group])\n\tsystem.perspective.closePopup(\u0027AddCard\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_Delete"
+        },
+        "position": {
+          "basis": "40px",
+          "display": false
+        },
+        "props": {
+          "primary": false,
+          "text": "Delete"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_5"
+            },
+            "position": {
+              "basis": "15px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "text": "ID Work Order:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_6"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "id_workorder"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "propConfig": {
+                  "custom.data": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.text"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "custom.dataTag": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Inventory/wo checkin.value"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value !\u003d \u0027\u0027:\n\t\tself.props.text \u003d value\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  },
+                  "custom.data_text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.dataTag}!\u003d \u0027\u0027,{this.custom.dataTag}, if({this.custom.data}!\u003d\u0027\u0027,{this.custom.data},\u0027\u0027))"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\two \u003d value\n\tval \u003d \u0027\u0027\n\tif wo !\u003d \u0027\u0027:\n\t\tdata \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[wo],\u0027Inventory\u0027)\n\t\tif data.getRowCount() !\u003d 0:\n\t\t\tfor i in data:\n\t\t\t\tstatus \u003d i[\u0027status\u0027]\n\t\t\t\tif status \u003d\u003d 6:\n\t\t\t\t\tself.parent.parent.parent.getChild(\"FlexContainer_1\").getChild(\"Table\").props.data \u003d data\n\t\t\t\t\treturn wo\n\t\t\t\telse:\n\t\t\t\t\tAlerts.showAlert(\"Work Order not allowed\", \"I\u0027m Sorry this work order is not ready for check-in.\", \"Work Order no ready for check.in\", \"true\", \"Disconnect Hal\", \"\", \"disc_full\", \"\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\telse:\n\t\tself.parent.parent.parent.getChild(\"FlexContainer_1\").getChild(\"Table\").props.data \u003d []\n\t\treturn val",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "text": "p4"
+                },
+                "type": "ia.input.text-field"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "196px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_7"
+            },
+            "position": {
+              "basis": "15px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "config": {
+                          "backgroundColor": "AUTO",
+                          "type": "ANY",
+                          "uuid": "7920b4a9-da4f-4447-a8b3-d4b5323216b2"
+                        },
+                        "context": {
+                          "action": "wo-checkin"
+                        }
+                      },
+                      "scope": "C",
+                      "type": "native/barcode"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/qr_code_scanner"
+                    }
+                  },
+                  "style": {
+                    "backgroundColor": "#AAAAAA"
+                  },
+                  "text": "",
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_8"
+            },
+            "position": {
+              "basis": "15px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "44px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_5"
+            },
+            "position": {
+              "basis": "15px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "basis": "776px",
+              "grow": 1
+            },
+            "props": {
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "id_work",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": false,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "code_wo",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Work Order"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "partnumber",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Item"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "quantity",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Quantity"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "name",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Status"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY HH:mm:ss",
+                  "editable": false,
+                  "field": "t_stamp",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": "Time"
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                }
+              ],
+              "data": {
+                "$": [
+                  "ds",
+                  192,
+                  1633652093006
+                ],
+                "$columns": [
+                  {
+                    "data": [
+                      7
+                    ],
+                    "name": "id_work",
+                    "type": "Integer"
+                  },
+                  {
+                    "data": [
+                      "p4"
+                    ],
+                    "name": "code_wo",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "100000317"
+                    ],
+                    "name": "partnumber",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      100
+                    ],
+                    "name": "quantity",
+                    "type": "Integer"
+                  },
+                  {
+                    "data": [
+                      6
+                    ],
+                    "name": "status",
+                    "type": "Integer"
+                  },
+                  {
+                    "data": [
+                      true
+                    ],
+                    "name": "type",
+                    "type": "Boolean"
+                  },
+                  {
+                    "data": [
+                      true
+                    ],
+                    "name": "enable",
+                    "type": "Boolean"
+                  },
+                  {
+                    "data": [
+                      null
+                    ],
+                    "name": "checkin",
+                    "type": "Boolean"
+                  },
+                  {
+                    "data": [
+                      null
+                    ],
+                    "name": "user",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      1633647827000
+                    ],
+                    "name": "t_stamp",
+                    "type": "Date"
+                  }
+                ]
+              },
+              "pager": {
+                "bottom": false
+              }
+            },
+            "type": "ia.display.table"
+          },
+          {
+            "meta": {
+              "name": "Label_8"
+            },
+            "position": {
+              "basis": "15px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "150px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": [
+                  {
+                    "config": {
+                      "script": "\tid_work \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"FlexContainer_0\").getChild(\"id_workorder\").props.text\n\tif id_work !\u003d \u0027\u0027:\n\t\tvalid \u003d system.db.runPrepQuery(\u0027select * from work_order where code_wo \u003d ?\u0027,[id_work],\u0027Inventory\u0027)\n\t\tuser \u003d str(self.session.props.auth.user.userName) \n\t\tif user \u003d\u003d \u0027\u0027:\n\t\t\tuser \u003d \u0027\u0027\n\t\tif valid.getRowCount() !\u003d 0:\n\t\t\titem \u003d valid[0][\u0027partnumber\u0027]\n\t\t\tquery \u003d \u0027update work_order set status \u003d 2, checkin \u003d 1, user \u003d ? where code_wo \u003d ?\u0027\n\t\t\targ \u003d [user, id_work]\n\t\t\tsystem.db.runPrepUpdate(query, arg, \u0027Inventory\u0027)\n\t\t\tqty \u003d valid[0][\u0027quantity\u0027]\n\t\t\tdata_part \u003d system.db.runPrepQuery(\u0027SELECT * FROM partnumber where part_item \u003d ? \u0027,[item],\u0027Inventory\u0027)\n\t\t\tif data_part.getRowCount() !\u003d 0:\n\t\t\t\tqty_part \u003d data_part[0][\u0027quantity\u0027]\n\t\t\t\tqty_new \u003d qty_part + qty\n\t\t\t\tsystem.db.runPrepUpdate(\u0027UPDATE partnumber SET quantity \u003d ? where part_item \u003d ?\u0027,[qty_new,item],\u0027Inventory\u0027)\n\n\t\t\tsystem.tag.write(\u0027[default]Inventory/wo checkin\u0027,\u0027\u0027)\n\t\t\tAlerts.showAlert(\"success\", \"You\u0027re So Successful\", \"Fantastic work. Work order saved successfully\", \"true\", \"I know\", \"No\", \"tag_faces\", \"close\", \"\", \"closePopup\", \"closePopup\", \"closePopup\")\n\t\t\t\n"
+                    },
+                    "scope": "G",
+                    "type": "script"
+                  },
+                  {
+                    "config": {
+                      "page": "/work"
+                    },
+                    "scope": "C",
+                    "type": "nav"
+                  }
+                ]
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "184px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#009262"
+              },
+              "text": "Check-in Work Order"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "51px"
+        },
+        "props": {
+          "justify": "center"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "margin": "0px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

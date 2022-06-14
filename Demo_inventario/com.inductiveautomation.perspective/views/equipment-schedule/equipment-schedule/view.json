@@ -1,0 +1,4759 @@
+{
+  "custom": {
+    "equipmentScheduleData": {}
+  },
+  "params": {
+    "breakEvents": {
+      "$": [
+        "ds",
+        192,
+        1615419003237
+      ],
+      "$columns": [
+        {
+          "data": [
+            1615307400919,
+            1615320000919,
+            1615335300919,
+            1615393800919,
+            1615406400919,
+            1615421700919,
+            1615480200919,
+            1615492800919,
+            1615508100919
+          ],
+          "name": "StartDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1615310100919,
+            1615323600919,
+            1615338000919,
+            1615396500919,
+            1615410000919,
+            1615424400919,
+            1615482900919,
+            1615496400919,
+            1615510800919
+          ],
+          "name": "EndDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)",
+            "color(55,120,55,50)"
+          ],
+          "name": "Color",
+          "type": "Object"
+        }
+      ]
+    },
+    "downtimeEvents": {
+      "$": [
+        "ds",
+        192,
+        1615418984439
+      ],
+      "$columns": [
+        {
+          "data": [
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "name": "ItemID",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1615314261919,
+            1615344981919,
+            1615307841919,
+            1615311381919,
+            1615335741919,
+            1615341321919,
+            1615370601919,
+            1615395021919,
+            1615401141919,
+            1615308141919,
+            1615392681919,
+            1615398681919,
+            1615312041919,
+            1615315401919,
+            1615321461919,
+            1615354041919,
+            1615358181919,
+            1615361901919,
+            1615385901919
+          ],
+          "name": "StartDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1615315941919,
+            1615346361919,
+            1615309341919,
+            1615312041919,
+            1615337481919,
+            1615342821919,
+            1615372521919,
+            1615397241919,
+            1615401921919,
+            1615309941919,
+            1615394421919,
+            1615399701919,
+            1615312881919,
+            1615317381919,
+            1615322241919,
+            1615355961919,
+            1615359441919,
+            1615364241919,
+            1615387521919
+          ],
+          "name": "EndDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)",
+            "color(212,49,49,75)"
+          ],
+          "name": "Color",
+          "type": "Object"
+        },
+        {
+          "data": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "name": "Layer",
+          "type": "Integer"
+        }
+      ]
+    },
+    "items": {
+      "$": [
+        "ds",
+        192,
+        1615418925561
+      ],
+      "$columns": [
+        {
+          "data": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "name": "ID",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Machine 1",
+            "Machine 2",
+            "Machine 3",
+            "Machine 4"
+          ],
+          "name": "Label",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Builtin/icons/24/media_play.png",
+            "Builtin/icons/24/media_stop_red.png",
+            "Builtin/icons/24/media_play.png",
+            "Builtin/icons/24/media_play.png"
+          ],
+          "name": "StatusImagePath",
+          "type": "String"
+        },
+        {
+          "data": [
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)"
+          ],
+          "name": "Foreground",
+          "type": "Object"
+        },
+        {
+          "data": [
+            "color(0,255,0,255)",
+            "color(192,192,192,255)",
+            "color(0,255,0,255)",
+            "color(0,255,0,255)"
+          ],
+          "name": "Background",
+          "type": "Object"
+        }
+      ]
+    },
+    "scheduledEvents": {
+      "$": [
+        "ds",
+        192,
+        1618441204828
+      ],
+      "$columns": [
+        {
+          "data": [
+            "evt-1-0",
+            "evt-1-1",
+            "evt-1-2",
+            "evt-1-3",
+            "evt-1-4",
+            "evt-1-5",
+            "evt-2-0",
+            "evt-2-1",
+            "evt-2-2",
+            "evt-2-3",
+            "evt-2-4",
+            "evt-2-5",
+            "evt-3-0",
+            "evt-3-1",
+            "evt-3-2",
+            "evt-3-3",
+            "evt-3-4",
+            "evt-3-5",
+            "evt-4-0",
+            "evt-4-1",
+            "evt-4-2",
+            "evt-4-3",
+            "evt-4-4",
+            "evt-4-5"
+          ],
+          "name": "EventID",
+          "type": "String"
+        },
+        {
+          "data": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "name": "ItemID",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1615310181919,
+            1615341321919,
+            1615362741919,
+            1615406661919,
+            1615428981919,
+            1615463061919,
+            1615305021919,
+            1615331301919,
+            1615367361919,
+            1615392741919,
+            1615418421919,
+            1615443501919,
+            1615305381919,
+            1615333401919,
+            1615356861919,
+            1615388481919,
+            1615407201919,
+            1615435221919,
+            1615309101919,
+            1615350981919,
+            1615382661919,
+            1615414221919,
+            1615450221919,
+            1615474641919
+          ],
+          "name": "StartDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1615333401919,
+            1615356321919,
+            1615399461919,
+            1615423701919,
+            1615458861919,
+            1615494561919,
+            1615324461919,
+            1615357521919,
+            1615384881919,
+            1615407681919,
+            1615435881919,
+            1615476801919,
+            1615324101919,
+            1615352001919,
+            1615380981919,
+            1615402461919,
+            1615431081919,
+            1615458321919,
+            1615344021919,
+            1615375641919,
+            1615405521919,
+            1615440561919,
+            1615466721919,
+            1615498281919
+          ],
+          "name": "EndDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            "Ord#1656",
+            "Ord#2FE2",
+            "Ord#1656",
+            "Ord#4B1",
+            "Ord#2FE2",
+            "Ord#2FE2",
+            "Ord#4B1",
+            "Ord#2FE2",
+            "Ord#4B1",
+            "Ord#4B1",
+            "Ord#4B1",
+            "Ord#2FE2",
+            "Ord#4B1",
+            "Ord#1656",
+            "Ord#1656",
+            "Ord#2FE2",
+            "Ord#2FE2",
+            "Ord#1656",
+            "Ord#1656",
+            "Ord#2FE2",
+            "Ord#1656",
+            "Ord#4B1",
+            "Ord#1656",
+            "Ord#4B1"
+          ],
+          "name": "Label",
+          "type": "String"
+        },
+        {
+          "data": [
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)",
+            "color(0,0,0,255)"
+          ],
+          "name": "Foreground",
+          "type": "Object"
+        },
+        {
+          "data": [
+            "color(198,255,242,255)",
+            "#FFFFFF",
+            "color(198,255,242,255)",
+            "color(255,220,198,255)",
+            "color(214,255,198,255)",
+            "color(214,255,198,255)",
+            "color(255,220,198,255)",
+            "color(214,255,198,255)",
+            "color(255,220,198,255)",
+            "color(255,220,198,255)",
+            "color(255,220,198,255)",
+            "color(214,255,198,255)",
+            "color(255,220,198,255)",
+            "color(198,255,242,255)",
+            "color(198,255,242,255)",
+            "color(214,255,198,255)",
+            "color(214,255,198,255)",
+            "color(198,255,242,255)",
+            "color(198,255,242,255)",
+            "color(214,255,198,255)",
+            "color(198,255,242,255)",
+            "color(255,220,198,255)",
+            "color(198,255,242,255)",
+            "color(255,220,198,255)"
+          ],
+          "name": "Background",
+          "type": "Object"
+        },
+        {
+          "data": [
+            120,
+            1380,
+            1140,
+            2700,
+            3780,
+            1740,
+            120,
+            3300,
+            1500,
+            1680,
+            2220,
+            3300,
+            2760,
+            3000,
+            1920,
+            1500,
+            1620,
+            2460,
+            2280,
+            1800,
+            2280,
+            540,
+            1260,
+            2760
+          ],
+          "name": "LeadTime",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)",
+            "color(255,255,0,255)"
+          ],
+          "name": "LeadColor",
+          "type": "Object"
+        },
+        {
+          "data": [
+            100,
+            100,
+            100,
+            21,
+            0,
+            0,
+            100,
+            100,
+            100,
+            100,
+            0,
+            0,
+            100,
+            100,
+            100,
+            100,
+            81,
+            0,
+            100,
+            100,
+            100,
+            37,
+            0,
+            0
+          ],
+          "name": "PctDone",
+          "type": "Double"
+        }
+      ]
+    }
+  },
+  "propConfig": {
+    "custom.equipmentScheduleData": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif system.date.isBefore(self.custom.equipmentScheduleData.startDate, self.custom.equipmentScheduleData.endDate):\n\t\timport copy\n\t\t\n#\t\tsystem.perspective.print(\"date range change\")\n\t\t\n\t\tsDate \u003d self.custom.equipmentScheduleData.startDate\n\t\teDate \u003d self.custom.equipmentScheduleData.endDate\n\t\tbreakEvents \u003d self.custom.equipmentScheduleData.breakEvents\n\t\tdowntimeEvents \u003d self.custom.equipmentScheduleData.downtimeEvents\n\t\titems \u003d self.custom.equipmentScheduleData.items\n\t\tscheduledEvents \u003d self.custom.equipmentScheduleData.scheduledEvents\n\t\t\n\t\tequipmentNameViewInstances \u003d []\n\t\tequipmentEventViewInstances \u003d []\n\t\trelativeLeftPercent \u003d 0\n\t\trelativeItemTop \u003d 0\n\t\trelativeScheduledEventTop \u003d 0\n\t\trelativeDowntimeTop \u003d 0\n\t\trelativeBreakTop \u003d -110\n\t\trelativeTop \u003d 0\n\t\tcanvasStructure \u003d {\n\t\t  \"position\": \"relative\",\n\t\t  \"top\": \"0px\",\n\t\t  \"left\": \"0px\",\n\t\t  \"bottom\": \"auto\",\n\t\t  \"right\": \"auto\",\n\t\t  \"zIndex\": 4,\n\t\t  \"width\": \"150px\",\n\t\t  \"height\": \"55px\",\n\t\t  \"viewPath\": \"equipment-schedule/equipment-row/equipment-name\",\n\t\t  \"viewParams\": {},\n\t\t  \"style\": {\n\t\t\t\"classes\": \"\"\n\t\t  }\n\t\t}\n\t\t\n\t\t#Determine minutes between overall start \u0026 end date.\n\t\ttotalMinutes \u003d system.date.minutesBetween(sDate, eDate)\n#\t\tsystem.perspective.print(\"totalMinutes: %s\" % (totalMinutes))\n#\t\tsystem.perspective.print(\"------------------------------\")\n\t\t\n\t\t#Calculates the relative positioning \u0026 width of each view instance, \u0026 build each View Canvas instance JSON structure for equipment row.\n\t\t#Loop through items.\n\t\tfor row in range(items.rowCount):\n\t\t\tthisItemNameStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\n\t\t\t#Get view instance parameters.\n\t\t\titemID \u003d items.getValueAt(row, \"ID\")\n\t\t\titemLabel \u003d items.getValueAt(row, \"Label\")\n\t\t\tstatusImagePath \u003d items.getValueAt(row, \"StatusImagePath\")\n\t\t\titemForegroundColor \u003d items.getValueAt(row, \"Foreground\")\n\t\t\titemBackgroundColor \u003d items.getValueAt(row, \"Background\")\n\t\t\t\n\t\t\t#Convert color to hex.\n\t\t\tif \"#\" not in itemForegroundColor:\n\t\t\t\tc \u003d itemForegroundColor.replace(\"color(\", \"\")\n\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\tt \u003d tuple(c)\n\t\t\t\titemForegroundColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\n\t\t\tif \"#\" not in itemBackgroundColor:\n\t\t\t\tc \u003d itemBackgroundColor.replace(\"color(\", \"\")\n\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\tt \u003d tuple(c)\n\t\t\t\titemBackgroundColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\n\t\t\t#Set view instance parameters.\n\t\t\titemViewParams \u003d {\t\"label\": itemLabel, \n\t\t\t\t\t\t\t\t\"statusImagePath\": statusImagePath, \n\t\t\t\t\t\t\t\t\"foregroundColor\": itemForegroundColor, \n\t\t\t\t\t\t\t\t\"backgroundColor\": itemBackgroundColor\n\t\t\t}\n\t\t\tthisItemNameStructure[\"viewParams\"] \u003d itemViewParams\n#\t\t\tsystem.perspective.print(\"ITEM - row: %s | ID: %s | Label: %s\" % (row, itemID, itemLabel))\n#\t\t\tsystem.perspective.print(\"ITEM - VIEW PARAMS: %s\" % (itemViewParams))\n#\t\t\tsystem.perspective.print(\"------------------------------\")\n\t\t\t\n\t\t\t#Append equipment-name view instance to the equipmentNameViewInstances list.\n\t\t\tequipmentNameViewInstances.append(thisItemNameStructure)\n\t\t\t\n\t\t\t#Loop through scheduled events.\n\t\t\tfor row2 in range(scheduledEvents.rowCount):\n\t\t\t\teventItemID \u003d scheduledEvents.getValueAt(row2, \"ItemID\")\n\t\t\t\teventStartDate \u003d scheduledEvents.getValueAt(row2, \"StartDate\")\n\t\t\t\teventEndDate \u003d scheduledEvents.getValueAt(row2, \"EndDate\")\n\t\t\t\t\n\t\t\t\tif eventItemID \u003d\u003d itemID and ((system.date.isAfter(sDate, eventStartDate) and system.date.isBefore(sDate, eventEndDate)) \n\t\t\t\t\tor (system.date.isBefore(eventStartDate, eDate) and system.date.isAfter(eventStartDate, sDate)) \n\t\t\t\t\tor (system.date.isAfter(eventStartDate, sDate) and system.date.isBefore(eventEndDate, eDate))):\n\t\t\t\t\tthisScheduledEventStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\t\n\t\t\t\t\t#Get view instance parameters.\n\t\t\t\t\teventID \u003d scheduledEvents.getValueAt(row2, \"EventID\")\n\t\t\t\t\teventStartDate \u003d scheduledEvents.getValueAt(row2, \"StartDate\")\n\t\t\t\t\teventEndDate \u003d scheduledEvents.getValueAt(row2, \"EndDate\")\n\t\t\t\t\teventLabel \u003d scheduledEvents.getValueAt(row2, \"Label\")\n\t\t\t\t\teventForegroundColor \u003d scheduledEvents.getValueAt(row2, \"Foreground\")\n\t\t\t\t\teventBackgroundColor \u003d scheduledEvents.getValueAt(row2, \"Background\")\n\t\t\t\t\teventLeadTime \u003d scheduledEvents.getValueAt(row2, \"LeadTime\")\n\t\t\t\t\teventLeadColor \u003d scheduledEvents.getValueAt(row2, \"LeadColor\")\n\t\t\t\t\teventPctDone \u003d scheduledEvents.getValueAt(row2, \"PctDone\")\n\t\t\t\t\t\n\t\t\t\t\tif system.date.isBefore(eventStartDate, sDate):\n\t\t\t\t\t\teventStartDate \u003d sDate\n\t\t\t\t\t\n\t\t\t\t\tif system.date.isAfter(eventEndDate, eDate):\n\t\t\t\t\t\teventEndDate \u003d eDate\n\t\t\t\t\t\n\t\t\t\t\t#Convert color to hex.\n\t\t\t\t\tif \"#\" not in eventBackgroundColor:\n\t\t\t\t\t\tc \u003d eventBackgroundColor.replace(\"color(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\t\t\tt \u003d tuple(c)\n\t\t\t\t\t\teventBackgroundColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\t\t\n\t\t\t\t\tif \"#\" not in eventForegroundColor:\n\t\t\t\t\t\tc \u003d eventForegroundColor.replace(\"color(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\t\t\tt \u003d tuple(c)\n\t\t\t\t\t\teventForegroundColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\t\t\n\t\t\t\t\tif \"#\" not in eventLeadColor:\n\t\t\t\t\t\tc \u003d eventLeadColor.replace(\"color(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\t\t\t\n\t\t\t\t\t\t#Handle non-transparent lead color.\n\t\t\t\t\t\tif c[3] \u003d\u003d 255:\n\t\t\t\t\t\t\tc[3] \u003d 175\n\t\t\t\t\t\t\t\n\t\t\t\t\t\tt \u003d tuple(c)\n\t\t\t\t\t\teventLeadColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\t\t\t\n\t\t\t\t\t#Set view instance parameters.\n\t\t\t\t\tscheduledEventViewParams \u003d {\t\"backgroundColor\": eventBackgroundColor, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"endDate\": eventEndDate, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"eventID\": eventID, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"foregroundColor\": eventForegroundColor, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"itemID\": eventItemID, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"label\": eventLabel, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"leadColor\": eventLeadColor, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"leadTime\": eventLeadTime, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"percentDone\": eventPctDone, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\"startDate\": eventStartDate\n\t\t\t\t\t}\n\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"SCHEDULED EVENT - row: %s | ItemID: %s | EventID: %s | Label: %s | StartDate: %s | EndDate: %s\" % (row2, eventItemID, eventID, eventLabel, eventStartDate, eventEndDate))\n#\t\t\t\t\tsystem.perspective.print(\"SCHEDULED EVENT - VIEW PARAMS: %s\" % (scheduledEventViewParams))\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance width.\n\t\t\t\t\teventMinutes \u003d system.date.minutesBetween(eventStartDate, eventEndDate) * 1.0\n\t\t\t\t\tviewWidthPercent \u003d (eventMinutes/totalMinutes) * 100\n\t\t\t\t\tif viewWidthPercent \u003e\u003d 100:\n\t\t\t\t\t\tviewWidthPercent \u003d 100\n#\t\t\t\t\tsystem.perspective.print(\"SCHEDULED EVENT - eventMinutes: %s | viewWidthPercent %s\" % (eventMinutes, viewWidthPercent))\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance start position.\n\t\t\t\t\teventStartMinutes \u003d system.date.minutesBetween(sDate, eventStartDate) * 1.0\n\t\t\t\t\tviewLeftPercent \u003d (eventStartMinutes/totalMinutes) * 100\n#\t\t\t\t\tsystem.perspective.print(\"SCHEDULED EVENT - eventStartMinutes: %s | viewLeftPercent %s\" % (eventStartMinutes, viewLeftPercent))\n\t\t\t\t\t\n\t\t\t\t\t#Set view instance properties.\n\t\t\t\t\tthisScheduledEventStructure[\"top\"] \u003d \"%s\" % relativeTop + \"px\"\n\t\t\t\t\tthisScheduledEventStructure[\"left\"] \u003d (\"%s\" % viewLeftPercent) + \"%\"\n\t\t\t\t\tthisScheduledEventStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\tthisScheduledEventStructure[\"zIndex\"] \u003d 2\n\t\t\t\t\tthisScheduledEventStructure[\"viewPath\"] \u003d \"equipment-schedule/equipment-row/scheduled-event\"\n\t\t\t\t\tthisScheduledEventStructure[\"viewParams\"] \u003d scheduledEventViewParams\n\t\t\t\t\t\n\t\t\t\t\t#Append view instance to the equipmentEventViewInstances list.\n\t\t\t\t\tequipmentEventViewInstances.append(thisScheduledEventStructure)\n\t\t\t\t\t\n\t\t\t\t\t#Decrement relativeTop position.\n\t\t\t\t\trelativeTop -\u003d 55\n\t\t\t\t\t\n\t\t\t\t\t#Add view instance for lead time if lead time \u003e 0 seconds.\n\t\t\t\t\tif eventLeadTime \u003e 0:\n\t\t\t\t\t\tthisLeadTimeStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\t\t\tleadTimeViewParams \u003d {\"leadTime\": eventLeadTime, \"leadColor\": eventLeadColor, \"eventID\": eventID}\n\t\t\t\t\t\t\n\t\t\t\t\t\t#Calculate view instance width.\n\t\t\t\t\t\teventMinutes \u003d eventLeadTime/60.0\n\t\t\t\t\t\tviewWidthPercent \u003d (eventMinutes/totalMinutes) * 100\n\t\t\t\t\t\tif viewWidthPercent \u003e\u003d 100:\n\t\t\t\t\t\t\tviewWidthPercent \u003d 100\n\t\t\t\t\t\t\n\t\t\t\t\t\t#Set view instance properties.\n\t\t\t\t\t\tthisLeadTimeStructure[\"top\"] \u003d \"%s\" % relativeTop + \"px\"\n\t\t\t\t\t\tthisLeadTimeStructure[\"left\"] \u003d (\"%s\" % viewLeftPercent) + \"%\"\n\t\t\t\t\t\tthisLeadTimeStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\t\tthisLeadTimeStructure[\"zIndex\"] \u003d 3\n\t\t\t\t\t\tthisLeadTimeStructure[\"viewPath\"] \u003d \"equipment-schedule/equipment-row/scheduled-event-lead-time\"\n\t\t\t\t\t\tthisLeadTimeStructure[\"viewParams\"] \u003d scheduledEventViewParams\n\t\t\t\t\t\t\n\t\t\t\t\t\t#Append view instance to the equipmentEventViewInstances list.\n\t\t\t\t\t\tequipmentEventViewInstances.append(thisLeadTimeStructure)\n\t\t\t\t\t\t\n\t\t\t\t\t\t#Decrement relativeTop position.\n\t\t\t\t\t\trelativeTop -\u003d 55\n\t\t\t\t\t\t\n\t\t\t#Loop through scheduled events.\n\t\t\tfor row3 in range(downtimeEvents.rowCount):\n\t\t\t\tdowntimeItemID \u003d downtimeEvents.getValueAt(row3, \"ItemID\")\t\n\t\t\t\tdowntimeStartDate \u003d downtimeEvents.getValueAt(row3, \"StartDate\")\t\n\t\t\t\tdowntimeEndDate \u003d downtimeEvents.getValueAt(row3, \"EndDate\")\n\t\t\t\t\n#\t\t\t\trelativeDowntimeTop \u003d relativeScheduledEventTop - 55\n\t\t\t\tif downtimeItemID \u003d\u003d itemID and ((system.date.isAfter(sDate, downtimeStartDate) and system.date.isBefore(sDate, downtimeEndDate)) \n\t\t\t\t\tor (system.date.isBefore(downtimeStartDate, eDate) and system.date.isAfter(downtimeStartDate, sDate)) \n\t\t\t\t\tor (system.date.isAfter(downtimeStartDate, sDate) and system.date.isBefore(downtimeEndDate, eDate))):\n\t\t\t\t\tthisDowntimeStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\t\t\n\t\t\t\t\t#Get view instance parameters.\n\t\t\t\t\tdowntimeItemID \u003d downtimeEvents.getValueAt(row3, \"ItemID\")\t\n\t\t\t\t\tdowntimeColor \u003d downtimeEvents.getValueAt(row3, \"Color\")\t\n\t\t\t\t\tdowntimeLayer \u003d downtimeEvents.getValueAt(row3, \"Layer\")\t\n\t\t\t\t\t\n\t\t\t\t\tif system.date.isBefore(downtimeStartDate, sDate):\n\t\t\t\t\t\tdowntimeStartDate \u003d sDate\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\tif system.date.isAfter(downtimeEndDate, eDate):\n\t\t\t\t\t\tdowntimeEndDate \u003d eDate\n\t\t\t\t\t\n\t\t\t\t\t#Convert color to hex.\n\t\t\t\t\tif \"#\" not in downtimeColor:\n\t\t\t\t\t\tc \u003d downtimeColor.replace(\"color(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\t\t\tt \u003d tuple(c)\n\t\t\t\t\t\tdowntimeColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t#Set view instance parameters.\n\t\t\t\t\tdowntimeViewParams \u003d {\t\"itemID\": downtimeItemID, \n\t\t\t\t\t\t\t\t\t\t\t\"startDate\": downtimeStartDate, \n\t\t\t\t\t\t\t\t\t\t\t\"endDate\": downtimeEndDate, \n\t\t\t\t\t\t\t\t\t\t\t\"color\": downtimeColor, \n\t\t\t\t\t\t\t\t\t\t\t\"layer\": downtimeLayer\n\t\t\t\t\t}\n\t\t\t\t\t\n#\t\t\t\t\tsystem.perspective.print(\"DOWNTIME EVENT - row: %s | ItemID: %s | StartDate: %s | EndDate: %s | Layer: %s\" % (row3, downtimeItemID, downtimeStartDate, downtimeEndDate, downtimeLayer))\n\n\t\t\t\t\t#Calculate view instance width.\n\t\t\t\t\tdowntimeMinutes \u003d system.date.minutesBetween(downtimeStartDate, downtimeEndDate) * 1.0\n\t\t\t\t\tviewWidthPercent \u003d (downtimeMinutes/totalMinutes) * 100\n\t\t\t\t\tif viewWidthPercent \u003e\u003d 100:\n\t\t\t\t\t\tviewWidthPercent \u003d 100\n#\t\t\t\t\tsystem.perspective.print(\"DOWNTIME EVENT - downtimeMinutes: %s | viewWidthPercent %s\" % (downtimeMinutes, viewWidthPercent))\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance start position.\n\t\t\t\t\tdowntimeStartMinutes \u003d system.date.minutesBetween(sDate, downtimeStartDate) * 1.0\n\t\t\t\t\tviewLeftPercent \u003d (downtimeStartMinutes/totalMinutes) * 100\n#\t\t\t\t\tsystem.perspective.print(\"DOWNTIME EVENT - downtimeStartMinutes: %s | viewLeftPercent %s\" % (eventStartMinutes, viewLeftPercent))\n\t\t\t\t\t\n\t\t\t\t\t#Set view instance properties.\n\t\t\t\t\tthisDowntimeStructure[\"top\"] \u003d \"%s\" % relativeTop + \"px\"\n\t\t\t\t\tthisDowntimeStructure[\"left\"] \u003d (\"%s\" % viewLeftPercent) + \"%\"\n\t\t\t\t\tthisDowntimeStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\tthisDowntimeStructure[\"zIndex\"] \u003d 4\n\t\t\t\t\tthisDowntimeStructure[\"viewPath\"] \u003d \"equipment-schedule/equipment-row/downtime-event\"\n\t\t\t\t\tthisDowntimeStructure[\"viewParams\"] \u003d downtimeViewParams\n\t\t\t\t\t\n\t\t\t\t\t#Append view instance to the equipmentEventViewInstances list.\n\t\t\t\t\tequipmentEventViewInstances.append(thisDowntimeStructure)\n\t\t\t\t\t\n\t\t\t\t\t#Decrement relativeTop position.\n\t\t\t\t\trelativeTop -\u003d 55\n\t\t\t\n\t\t\t#Loop through the break events.\n\t\t\tfor row in range(breakEvents.rowCount):\n\t\t\t\tthisBreakStructure \u003d copy.deepcopy(canvasStructure)\n\t\t\t\t\n\t\t\t\t#Get view instance parameters.\n\t\t\t\tbreakStartDate \u003d breakEvents.getValueAt(row, \"StartDate\")\n\t\t\t\tbreakEndDate \u003d breakEvents.getValueAt(row, \"EndDate\")\n\t\t\t\tbreakColor \u003d breakEvents.getValueAt(row, \"Color\")\n\t\t\t\t\n\t\t\t\tif ((system.date.isAfter(sDate, breakStartDate) and system.date.isBefore(sDate, breakEndDate)) \n\t\t\t\t\tor (system.date.isBefore(breakStartDate, eDate) and system.date.isAfter(breakStartDate, sDate)) \n\t\t\t\t\tor (system.date.isAfter(breakStartDate, sDate) and system.date.isBefore(breakEndDate, eDate))):\n\t\t\t\t\t\n\t\t\t\t\tif system.date.isBefore(breakStartDate, sDate):\n\t\t\t\t\t\tdowntimeStartDate \u003d sDate\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\tif system.date.isAfter(breakEndDate, eDate):\n\t\t\t\t\t\tdowntimeEndDate \u003d eDate\n\t\t\t\t\t\n\t\t\t\t\tif \"#\" not in breakColor:\n\t\t\t\t\t\tc \u003d breakColor.replace(\"color(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"color\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\"(\", \"\")\n\t\t\t\t\t\tc \u003d c.replace(\")\", \"\")\n\t\t\t\t\t\tc \u003d c.split(\",\")\n\t\t\t\t\t\tc[0] \u003d int(c[0])\n\t\t\t\t\t\tc[1] \u003d int(c[1])\n\t\t\t\t\t\tc[2] \u003d int(c[2])\n\t\t\t\t\t\tc[3] \u003d int(c[3])\n\t\t\t\t\t\tt \u003d tuple(c)\n\t\t\t\t\t\tbreakColor \u003d \"#%02x%02x%02x%02x\" % t\n\t\t\t\t\t\t\n\t\t\t\t\t#Set view instance parameters.\n\t\t\t\t\tbreakViewParams \u003d {\"startDate\": breakStartDate, \"endDate\": breakEndDate, \"color\": breakColor}\n\t\t\t\t\t\n\t#\t\t\t\tsystem.perspective.print(\"BREAK EVENT - row: %s | StartDate: %s | EndDate: %s\" % (row, breakStartDate, breakEndDate))\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance width.\n\t\t\t\t\tbreakMinutes \u003d system.date.minutesBetween(breakStartDate, breakEndDate) * 1.0\n\t\t\t\t\tviewWidthPercent \u003d (breakMinutes/totalMinutes) * 100\n\t\t\t\t\tif viewWidthPercent \u003e\u003d 100:\n\t\t\t\t\t\tviewWidthPercent \u003d 100\n\t#\t\t\t\tsystem.perspective.print(\"BREAKTIME EVENT - breakMinutes: %s | viewWidthPercent %s\" % (breakMinutes, viewWidthPercent))\n\t\t\t\t\t\n\t\t\t\t\t#Calculate view instance start position.\n\t\t\t\t\tbreakStartMinutes \u003d system.date.minutesBetween(sDate, breakStartDate) * 1.0\n\t\t\t\t\tviewLeftPercent \u003d (breakStartMinutes/totalMinutes) * 100\n\t#\t\t\t\tsystem.perspective.print(\"BREAKTIME EVENT - breakStartMinutes: %s | viewLeftPercent %s\" % (breakStartMinutes, viewLeftPercent))\n\t\t\n\t\t\t\t\t#Set view instance properties.\n\t\t\t\t\tthisBreakStructure[\"top\"] \u003d \"%s\" % relativeTop + \"px\"\n\t\t\t\t\tthisBreakStructure[\"left\"] \u003d (\"%s\" % viewLeftPercent) + \"%\"\n\t\t\t\t\tthisBreakStructure[\"width\"] \u003d (\"%s\" % viewWidthPercent) + \"%\"\n\t\t\t\t\tthisBreakStructure[\"zIndex\"] \u003d 1\n\t\t\t\t\tthisBreakStructure[\"viewPath\"] \u003d \"equipment-schedule/equipment-row/breaktime-event\"\n\t\t\t\t\tthisBreakStructure[\"viewParams\"] \u003d breakViewParams\n\t\t\t\t\t\n\t\t\t\t\t#Append view instance to the equipmentEventViewInstances list.\n\t\t\t\t\tequipmentEventViewInstances.append(thisBreakStructure)\n\t\t\t\t\t\n\t\t\t\t\t#Decrement relativeTop position.\n\t\t\t\t\trelativeTop -\u003d 55\n\t\t\t\n\t\t\t#Increment relativeTop position for the \"next row\".\t\n\t\t\trelativeTop +\u003d 55\n\t\t\n\t\t#Set the View Canvas instances property.\n\t\tself.getChild(\"root\").getChild(\"chart\").getChild(\"equipment\").getChild(\"equipmentNamesViewCanvas\").props.instances \u003d equipmentNameViewInstances\n\t\tself.getChild(\"root\").getChild(\"chart\").getChild(\"equipment\").getChild(\"equipmentEventsViewCanvas\").props.instances \u003d equipmentEventViewInstances\n\t\t\n#\telse:\n\t\t#REPLACE w/ popup message to notify user.\n#\t\tsystem.perspective.print(\"Selected end date must be after start date. Reselect start and/or end date.\")"
+      },
+      "persistent": true
+    },
+    "custom.equipmentScheduleData.breakEvents": {
+      "binding": {
+        "config": {
+          "path": "view.params.breakEvents"
+        },
+        "type": "property"
+      }
+    },
+    "custom.equipmentScheduleData.downtimeEvents": {
+      "binding": {
+        "config": {
+          "path": "view.params.downtimeEvents"
+        },
+        "type": "property"
+      }
+    },
+    "custom.equipmentScheduleData.endDate": {
+      "binding": {
+        "config": {
+          "path": "/root/dateRange/endDate.props.value"
+        },
+        "type": "property"
+      }
+    },
+    "custom.equipmentScheduleData.items": {
+      "binding": {
+        "config": {
+          "path": "view.params.items"
+        },
+        "type": "property"
+      }
+    },
+    "custom.equipmentScheduleData.scheduledEvents": {
+      "binding": {
+        "config": {
+          "path": "view.params.scheduledEvents"
+        },
+        "type": "property"
+      }
+    },
+    "custom.equipmentScheduleData.startDate": {
+      "binding": {
+        "config": {
+          "path": "/root/dateRange/startDate.props.value"
+        },
+        "type": "property"
+      }
+    },
+    "params.breakEvents": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.downtimeEvents": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.items": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.scheduledEvents": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 497,
+      "width": 1000
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "schedule"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.endDate": {
+                    "binding": {
+                      "config": {
+                        "path": "..../dateRange/endDate.props.value"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.startDate": {
+                    "binding": {
+                      "config": {
+                        "path": "..../dateRange/startDate.props.value"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "equipment-schedule/schedule/schedule"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "schedule"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentSchedule/Schedule/Container",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "equipmentNamesViewCanvas"
+                },
+                "position": {
+                  "basis": "150px",
+                  "shrink": 0
+                },
+                "props": {
+                  "instances": [
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "0px",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "0px",
+                      "viewParams": {
+                        "backgroundColor": "#00ff00ff",
+                        "foregroundColor": "#000000ff",
+                        "label": "Machine 1",
+                        "statusImagePath": "Builtin/icons/24/media_play.png"
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/equipment-name",
+                      "width": "150px",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "0px",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "0px",
+                      "viewParams": {
+                        "backgroundColor": "#c0c0c0ff",
+                        "foregroundColor": "#000000ff",
+                        "label": "Machine 2",
+                        "statusImagePath": "Builtin/icons/24/media_stop_red.png"
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/equipment-name",
+                      "width": "150px",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "0px",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "0px",
+                      "viewParams": {
+                        "backgroundColor": "#00ff00ff",
+                        "foregroundColor": "#000000ff",
+                        "label": "Machine 3",
+                        "statusImagePath": "Builtin/icons/24/media_play.png"
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/equipment-name",
+                      "width": "150px",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "0px",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "0px",
+                      "viewParams": {
+                        "backgroundColor": "#00ff00ff",
+                        "foregroundColor": "#000000ff",
+                        "label": "Machine 4",
+                        "statusImagePath": "Builtin/icons/24/media_play.png"
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/equipment-name",
+                      "width": "150px",
+                      "zIndex": 4
+                    }
+                  ],
+                  "style": {
+                    "overflow": "visible"
+                  },
+                  "transitionSettings": {
+                    "duration": "1s",
+                    "timingFunction": "linear"
+                  }
+                },
+                "type": "ia.display.viewcanvas"
+              },
+              {
+                "meta": {
+                  "name": "equipmentEventsViewCanvas"
+                },
+                "position": {
+                  "basis": "150px",
+                  "grow": 1
+                },
+                "props": {
+                  "enableTransitions": false,
+                  "instances": [
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "3.8418079096%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "0px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615333401919
+                        },
+                        "eventID": "evt-1-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 120,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310181919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "10.9322033898%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "3.8418079096%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-55px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615333401919
+                        },
+                        "eventID": "evt-1-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 120,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310181919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.0564971751412%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "18.5028248588%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-110px",
+                      "viewParams": {
+                        "backgroundColor": "#FFFFFF",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615356321919
+                        },
+                        "eventID": "evt-1-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1380,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615341321919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "7.06214689266%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "18.5028248588%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-165px",
+                      "viewParams": {
+                        "backgroundColor": "#FFFFFF",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615356321919
+                        },
+                        "eventID": "evt-1-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1380,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615341321919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.649717514124%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "28.5875706215%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-220px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615399461919
+                        },
+                        "eventID": "evt-1-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1140,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615362741919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "17.2881355932%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "28.5875706215%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-275px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615399461919
+                        },
+                        "eventID": "evt-1-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1140,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615362741919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.536723163842%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.2655367232%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-330px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615423701919
+                        },
+                        "eventID": "evt-1-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2700,
+                        "percentDone": 21,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406661919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "8.02259887006%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.2655367232%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-385px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615423701919
+                        },
+                        "eventID": "evt-1-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2700,
+                        "percentDone": 21,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406661919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.27118644068%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "59.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-440px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615458861919
+                        },
+                        "eventID": "evt-1-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3780,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615428981919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "14.0677966102%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "59.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-495px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615458861919
+                        },
+                        "eventID": "evt-1-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3780,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615428981919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.77966101695%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "75.8192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-550px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615494561919
+                        },
+                        "eventID": "evt-1-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1740,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615463061919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "14.8305084746%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "75.8192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-605px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615494561919
+                        },
+                        "eventID": "evt-1-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 1,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1740,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615463061919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.819209039548%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "5.76271186441%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-660px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615315941919
+                        },
+                        "itemID": 1,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615314261919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.790960451977%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "20.2259887006%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-715px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615346361919
+                        },
+                        "itemID": 1,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615344981919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.649717514124%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.54237288136%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-770px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310100919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615307400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "8.47457627119%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-825px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615323600919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615320000919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "15.6779661017%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-880px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615338000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615335300919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "43.2203389831%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-935px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615396500919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615393800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.1525423729%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-990px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615410000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "56.3559322034%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1045px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615424400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615421700919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "83.8983050847%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1100px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615482900919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615480200919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "89.8305084746%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1155px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615496400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615492800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "97.0338983051%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1210px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615510800919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615508100919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "1.41242937853%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1210px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615324461919
+                        },
+                        "eventID": "evt-2-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 120,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615305021919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "9.15254237288%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "1.41242937853%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1265px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615324461919
+                        },
+                        "eventID": "evt-2-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 120,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615305021919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.0564971751412%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "13.7853107345%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1320px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615357521919
+                        },
+                        "eventID": "evt-2-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3300,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615331301919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "12.3446327684%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "13.7853107345%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1375px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615357521919
+                        },
+                        "eventID": "evt-2-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3300,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615331301919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.55367231638%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "30.7627118644%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1430px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615384881919
+                        },
+                        "eventID": "evt-2-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1500,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615367361919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "8.24858757062%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "30.7627118644%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1485px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615384881919
+                        },
+                        "eventID": "evt-2-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1500,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615367361919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.706214689266%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "42.7118644068%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1540px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615407681919
+                        },
+                        "eventID": "evt-2-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1680,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615392741919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "7.03389830508%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "42.7118644068%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1595px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615407681919
+                        },
+                        "eventID": "evt-2-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1680,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615392741919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.790960451977%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "54.802259887%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1650px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615435881919
+                        },
+                        "eventID": "evt-2-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2220,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615418421919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "8.22033898305%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "54.802259887%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1705px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615435881919
+                        },
+                        "eventID": "evt-2-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2220,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615418421919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.04519774011%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "66.6101694915%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1760px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615476801919
+                        },
+                        "eventID": "evt-2-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3300,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615443501919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "15.6779661017%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "66.6101694915%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1815px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615476801919
+                        },
+                        "eventID": "evt-2-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 2,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3300,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615443501919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.55367231638%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.74011299435%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1870px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615309341919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615307841919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.706214689266%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "4.40677966102%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1925px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615312041919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615311381919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.310734463277%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "15.8757062147%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-1980px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615337481919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615335741919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.819209039548%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "18.5028248588%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2035px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615342821919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615341321919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.706214689266%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "32.2881355932%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2090px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615372521919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615370601919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.90395480226%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "43.7853107345%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2145px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615397241919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615395021919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "1.04519774011%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "46.6666666667%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2200px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615401921919
+                        },
+                        "itemID": 2,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615401141919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.367231638418%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.54237288136%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2255px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310100919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615307400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "8.47457627119%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2310px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615323600919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615320000919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "15.6779661017%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2365px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615338000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615335300919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "43.2203389831%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2420px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615396500919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615393800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.1525423729%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2475px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615410000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "56.3559322034%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2530px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615424400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615421700919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "83.8983050847%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2585px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615482900919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615480200919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "89.8305084746%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2640px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615496400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615492800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "97.0338983051%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2695px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615510800919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615508100919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "1.58192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2695px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615324101919
+                        },
+                        "eventID": "evt-3-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2760,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615305381919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "8.81355932203%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "1.58192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2750px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615324101919
+                        },
+                        "eventID": "evt-3-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2760,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615305381919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.29943502825%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "14.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2805px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615352001919
+                        },
+                        "eventID": "evt-3-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3000,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615333401919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "8.75706214689%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "14.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2860px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615352001919
+                        },
+                        "eventID": "evt-3-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 3000,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615333401919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.41242937853%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "25.8192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2915px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615380981919
+                        },
+                        "eventID": "evt-3-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1920,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615356861919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "11.3559322034%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "25.8192090395%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-2970px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615380981919
+                        },
+                        "eventID": "evt-3-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1920,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615356861919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.90395480226%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "40.7062146893%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3025px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615402461919
+                        },
+                        "eventID": "evt-3-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1500,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615388481919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "6.58192090395%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "40.7062146893%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3080px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615402461919
+                        },
+                        "eventID": "evt-3-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1500,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615388481919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.706214689266%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.5197740113%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3135px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615431081919
+                        },
+                        "eventID": "evt-3-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1620,
+                        "percentDone": 81,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615407201919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "11.2429378531%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.5197740113%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3190px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615431081919
+                        },
+                        "eventID": "evt-3-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1620,
+                        "percentDone": 81,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615407201919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.762711864407%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "62.7118644068%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3245px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615458321919
+                        },
+                        "eventID": "evt-3-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2460,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615435221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "10.8757062147%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "62.7118644068%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3300px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615458321919
+                        },
+                        "eventID": "evt-3-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 3,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2460,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615435221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.1581920904%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.8813559322%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3355px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615309941919
+                        },
+                        "itemID": 3,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615308141919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.847457627119%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "42.6836158192%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3410px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615394421919
+                        },
+                        "itemID": 3,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615392681919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.819209039548%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "45.5084745763%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3465px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615399701919
+                        },
+                        "itemID": 3,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615398681919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.480225988701%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.54237288136%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3520px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310100919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615307400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "8.47457627119%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3575px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615323600919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615320000919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "15.6779661017%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3630px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615338000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615335300919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "43.2203389831%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3685px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615396500919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615393800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.1525423729%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3740px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615410000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "56.3559322034%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3795px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615424400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615421700919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "83.8983050847%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3850px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615482900919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615480200919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "89.8305084746%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3905px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615496400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615492800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "97.0338983051%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3960px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615510800919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615508100919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "3.33333333333%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-3960px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615344021919
+                        },
+                        "eventID": "evt-4-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2280,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615309101919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "16.4406779661%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "3.33333333333%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4015px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615344021919
+                        },
+                        "eventID": "evt-4-0",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2280,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615309101919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.07344632768%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "23.0508474576%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4070px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615375641919
+                        },
+                        "eventID": "evt-4-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1800,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615350981919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "11.6101694915%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "23.0508474576%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4125px",
+                      "viewParams": {
+                        "backgroundColor": "#d6ffc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615375641919
+                        },
+                        "eventID": "evt-4-1",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#2FE2",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1800,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615350981919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.847457627119%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "37.9661016949%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4180px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615405521919
+                        },
+                        "eventID": "evt-4-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2280,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615382661919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "10.7627118644%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "37.9661016949%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4235px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615405521919
+                        },
+                        "eventID": "evt-4-2",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2280,
+                        "percentDone": 100,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615382661919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.07344632768%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "52.8248587571%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4290px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615440561919
+                        },
+                        "eventID": "evt-4-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 540,
+                        "percentDone": 37,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615414221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "12.4011299435%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "52.8248587571%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4345px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615440561919
+                        },
+                        "eventID": "evt-4-3",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 540,
+                        "percentDone": 37,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615414221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.254237288136%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "69.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4400px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615466721919
+                        },
+                        "eventID": "evt-4-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1260,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615450221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "7.76836158192%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "69.7740112994%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4455px",
+                      "viewParams": {
+                        "backgroundColor": "#c6fff2ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615466721919
+                        },
+                        "eventID": "evt-4-4",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#1656",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 1260,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615450221919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "0.593220338983%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "81.2711864407%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4510px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615498281919
+                        },
+                        "eventID": "evt-4-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2760,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615474641919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event",
+                      "width": "11.1299435028%",
+                      "zIndex": 2
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "81.2711864407%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4565px",
+                      "viewParams": {
+                        "backgroundColor": "#ffdcc6ff",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615498281919
+                        },
+                        "eventID": "evt-4-5",
+                        "foregroundColor": "#000000ff",
+                        "itemID": 4,
+                        "label": "Ord#4B1",
+                        "leadColor": "#ffff00af",
+                        "leadTime": 2760,
+                        "percentDone": 0,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615474641919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/scheduled-event-lead-time",
+                      "width": "1.29943502825%",
+                      "zIndex": 3
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "4.71751412429%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4620px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615312881919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615312041919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.395480225989%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "6.29943502825%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4675px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615317381919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615315401919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.932203389831%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "9.15254237288%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4730px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615322241919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615321461919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.367231638418%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "24.4915254237%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4785px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615355961919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615354041919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.90395480226%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "26.4406779661%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4840px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615359441919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615358181919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.593220338983%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "28.1920903955%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4895px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615364241919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615361901919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "1.10169491525%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "39.4915254237%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-4950px",
+                      "viewParams": {
+                        "color": "#d431314b",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615387521919
+                        },
+                        "itemID": 4,
+                        "layer": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615385901919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/downtime-event",
+                      "width": "0.762711864407%",
+                      "zIndex": 4
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "2.54237288136%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5005px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615310100919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615307400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "8.47457627119%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5060px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615323600919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615320000919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "15.6779661017%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5115px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615338000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615335300919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "43.2203389831%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5170px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615396500919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615393800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "49.1525423729%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5225px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615410000919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615406400919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "56.3559322034%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5280px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615424400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615421700919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "83.8983050847%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5335px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615482900919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615480200919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "89.8305084746%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5390px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615496400919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615492800919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.69491525424%",
+                      "zIndex": 1
+                    },
+                    {
+                      "bottom": "auto",
+                      "height": "55px",
+                      "left": "97.0338983051%",
+                      "position": "relative",
+                      "right": "auto",
+                      "style": {
+                        "classes": ""
+                      },
+                      "top": "-5445px",
+                      "viewParams": {
+                        "color": "#37783732",
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615510800919
+                        },
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1618941989687
+                          ],
+                          "$ts": 1615508100919
+                        }
+                      },
+                      "viewPath": "equipment-schedule/equipment-row/breaktime-event",
+                      "width": "1.27118644068%",
+                      "zIndex": 1
+                    }
+                  ],
+                  "style": {
+                    "overflow": "visible"
+                  },
+                  "transitionSettings": {
+                    "duration": "1s",
+                    "timingFunction": "linear"
+                  },
+                  "useDefaultViewHeight": false,
+                  "useDefaultViewWidth": false
+                },
+                "type": "ia.display.viewcanvas"
+              }
+            ],
+            "meta": {
+              "name": "equipment"
+            },
+            "position": {
+              "basis": "420px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentSchedule/Equipment/Container",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "chart"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflowX": "hidden",
+            "overflowY": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblStartDate"
+            },
+            "position": {
+              "basis": "62px"
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentSchedule/DateRange/Label"
+              },
+              "text": "START"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "startDate"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Mar 9, 2021 7:00 AM",
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1618940854110
+                ],
+                "$ts": 1615302000000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          },
+          {
+            "meta": {
+              "name": "lblEnd"
+            },
+            "position": {
+              "basis": "62px"
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentSchedule/DateRange/Label"
+              },
+              "text": "END"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "endDate"
+            },
+            "position": {
+              "basis": "170px"
+            },
+            "props": {
+              "formattedValue": "Mar 11, 2021 6:00 PM",
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1618941989670
+                ],
+                "$ts": 1615514400000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          },
+          {
+            "meta": {
+              "name": "lblWarning"
+            },
+            "position": {
+              "basis": "211px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "dateIsAfter({../startDate.props.value}, {../endDate.props.value})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "EquipmentSchedule/EquipmentSchedule/DateRange/WarningLabel"
+              },
+              "text": "Start date must be earlier than end date."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "dateRange"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "EquipmentSchedule/EquipmentSchedule/DateRange/Container"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "EquipmentSchedule/EquipmentSchedule/Container",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}
